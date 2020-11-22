@@ -81,7 +81,7 @@ function App() {
                 <div class="sidebar-content">
                   <img class="img-fluid float-left" src={welcome}></img>
                   <h3>Tuesday, 24 November 2020</h3>
-                  <br/>
+                  <br />
                 </div>
               </div>
               <div class="col-12">
@@ -93,15 +93,21 @@ function App() {
                     {/* <div className="timerMain"> */}
                     <h2>
                       <div className="timerText ">
-                        <div class="row mx-auto justify-content-center align-items-center flex-row">
+                        <div class="row text-center">
                           <div className="col-sm-4">{timerComponents[0]}</div>
                           <div className="col-sm-4">{timerComponents[1]}</div>
                           <div className="col-sm-4">{timerComponents[2]}</div>
                         </div>
-                        <div class="row">
-                          <div className="col-sm-4">Hours</div>
-                          <div className="col-sm-4">Minutes</div>
-                          <div className="col-sm-4">Seconds</div>
+                        <div class="row text-center">
+                          <div className="col-sm-4">
+                            <span>Hours</span>
+                          </div>
+                          <div className="col-sm-4">
+                            <span>Minutes</span>
+                          </div>
+                          <div className="col-sm-4">
+                            <span>Seconds</span>
+                          </div>
                         </div>
                       </div>
                     </h2>
@@ -113,16 +119,19 @@ function App() {
           </div>
           <div class="col-sm-8">
             <div class="main-content">
-              <img class="img-fluid float-right" src={sheikh} style={{width: "60%"}}></img>
+              <img
+                class="img-fluid float-right"
+                src={sheikh}
+                style={{ width: "60%" }}
+              ></img>
             </div>
           </div>
         </div>
       </div>
-      <br></br>
-{/* 
+
       <div className="timeSection">
-        <h3>Tuesday, 24 November 2020</h3>
-      </div> */}
+        <h3>#KU2020NationalDay</h3>
+      </div>
     </>
   );
 }

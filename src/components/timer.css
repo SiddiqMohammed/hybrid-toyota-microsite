@@ -1,7 +1,7 @@
 .bg {
   /* background-image: url("./asset4.png"); */
 
-  height: 110%;
+  height: 100%;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -37,7 +37,11 @@
 }
 
 .col-12 {
-  margin-left: 50px;
+  margin-left: 10px;
+}
+
+.timeSection {
+  margin-left: 16px;
 }
 
 @media only screen and (max-width: 2000px) {
