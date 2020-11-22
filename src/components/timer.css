@@ -1,5 +1,5 @@
 .bg {
-  background-image: url("./national-day-2.png");
+  /* background-image: url("./asset4.png"); */
 
   height: 110%;
 
@@ -14,11 +14,33 @@
   font-size: 74px;
 } */
 
+.tLeft {
+  /* margin-top: 35px; */
+}
+
+.section-1 {
+  margin: 15px;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.timer span{
+  /* margin: 43px; */
+  font-size: 2vw;
+}
+
+.timerText span{
+  font-size: 2vw;
+  /* margin: 10px; */
+}
+
 @media only screen and (max-width: 2000px) {
-  .timer span {
+  /* .timer span {
     margin-right: 155px;
     font-size: 74px;
-  }
+  } */
 
   .timerMain h2 {
     position: absolute;
@@ -28,10 +50,10 @@
 }
 
 @media only screen and (max-width: 1800px) {
-  .timer span {
+  /* .timer span {
     margin-right: 103px;
     font-size: 74px;
-  }
+  } */
 
   .timerMain h2 {
     position: absolute;
@@ -41,10 +63,10 @@
 }
 
 @media only screen and (max-width: 1366px) {
-  .timer span {
+  /* .timer span {
     margin-right: 82px;
     font-size: 74px;
-  }
+  } */
 
   .timerMain h2 {
     position: absolute;
@@ -54,10 +76,10 @@
 }
 
 @media only screen and (max-width: 1280px) {
-  .timer span {
+  /* .timer span {
     margin-right: 90px;
     font-size: 74px;
-  }
+  } */
 
   .timerMain h2 {
     position: absolute;
