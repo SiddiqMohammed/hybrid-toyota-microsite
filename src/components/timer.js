@@ -5,10 +5,14 @@ import topRight from "../img/logos.png";
 import welcome from "../img/welcome2.png";
 import sheikh from "../img/sheikh.png";
 
+// import { fainstagram } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+
 function App() {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
-    const difference = new Date(2020, 10, 24) - new Date();
+    const difference = new Date(2020, 10, 24, 11) - new Date();
     let timeLeft = {};
 
     console.log(window.innerWidth, window.innerHeight);
@@ -72,7 +76,6 @@ function App() {
           </div>
         </div>
       </div>
-
       <div class="container mt-3">
         <div class="row">
           <div class="col-sm-4">
@@ -80,39 +83,40 @@ function App() {
               <div class="col-12">
                 <div class="sidebar-content">
                   <img class="img-fluid float-left" src={welcome}></img>
-                  <br/>
+                  <br />
                   <h3> Tuesday, 24 November 2020</h3>
                   <br />
                 </div>
               </div>
               <div class="col-12">
-                <div class="sidebar-content"></div>
-              </div>
-              <div class="col-12">
                 <div class="sidebar-content">
                   <div className="timer">
-                    {/* <div className="timerMain"> */}
                     <h2>
                       <div className="timerText ">
                         <div class="row text-center">
-                          <div className="col-sm-4">{timerComponents[0]}</div>
-                          <div className="col-sm-4">{timerComponents[1]}</div>
-                          <div className="col-sm-4">{timerComponents[2]}</div>
+                          <div className="col-4 col-xs-4">
+                            {timerComponents[0]}
+                          </div>
+                          <div className="col-4 col-xs-4">
+                            {timerComponents[1]}
+                          </div>
+                          <div className="col-4 col-xs-4">
+                            {timerComponents[2]}
+                          </div>
                         </div>
                         <div class="row text-center">
-                          <div className="col-sm-4">
+                          <div className="col-4 col-xs-4">
                             <span>Hours</span>
                           </div>
-                          <div className="col-sm-4">
+                          <div className="col-4 col-xs-4">
                             <span>Minutes</span>
                           </div>
-                          <div className="col-sm-4">
+                          <div className="col-4 col-xs-4">
                             <span>Seconds</span>
                           </div>
                         </div>
                       </div>
                     </h2>
-                    {/* </div> */}
                   </div>
                 </div>
               </div>
@@ -131,7 +135,21 @@ function App() {
       </div>
 
       <div className="timeSection">
-        <h3>#KU2020NationalDay</h3>
+        <h3>
+          #KU2020NationalDay {" "}
+          <a href="https://www.instagram.com/khalifa_university/">
+            <FontAwesomeIcon icon={faInstagram} style={{color: "black"}}/>{" "}
+          </a>
+          <a href="https://www.facebook.com/khalifauniversity/">
+            <FontAwesomeIcon icon={faFacebook} style={{color: "black"}}/>{" "}
+          </a>
+          <a href="https://www.youtube.com/user/KhalifaUniversity">
+            <FontAwesomeIcon icon={faYoutube} style={{color: "black"}}/>{" "}
+          </a>
+          <a href="https://twitter.com/KhalifaUni">
+            <FontAwesomeIcon icon={faTwitter} style={{color: "black"}}/>{" "}
+          </a>
+        </h3>
       </div>
     </>
   );
