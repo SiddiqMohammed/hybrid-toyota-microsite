@@ -80,7 +80,8 @@ function App() {
               <div class="col-12">
                 <div class="sidebar-content">
                   <img class="img-fluid float-left" src={welcome}></img>
-                  <h3>Tuesday, 24 November 2020</h3>
+                  <br/>
+                  <h3> Tuesday, 24 November 2020</h3>
                   <br />
                 </div>
               </div>
