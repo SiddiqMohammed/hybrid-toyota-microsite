@@ -36,6 +36,10 @@
   /* margin: 10px; */
 }
 
+.col-12 {
+  margin-left: 50px;
+}
+
 @media only screen and (max-width: 2000px) {
   /* .timer span {
     margin-right: 155px;
@@ -87,3 +91,4 @@
     left: 25px;
   }
 }
+

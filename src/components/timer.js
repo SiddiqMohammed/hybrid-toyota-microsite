@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./timer.css";
 import topLeft from "../img/khalifa-uni1.png";
 import topRight from "../img/logos.png";
-import welcome from "../img/welcome1.png";
+import welcome from "../img/welcome2.png";
 import sheikh from "../img/sheikh.png";
 
 function App() {
@@ -81,6 +81,7 @@ function App() {
                 <div class="sidebar-content">
                   <img class="img-fluid float-left" src={welcome}></img>
                   <h3>Tuesday, 24 November 2020</h3>
+                  <br/>
                 </div>
               </div>
               <div class="col-12">
