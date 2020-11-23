@@ -167,6 +167,7 @@
   }
   .timeSection h3 {
     margin-bottom: 0px;
+    font-size: 5.2vw;
   }
   .tLeft {
     margin-left: 0px;
@@ -188,8 +189,8 @@
   .timeSection{
     margin-left: 0px;
     /* margin-top: 0px; */
-    position: fixed;
-    bottom: 10px;
+    position: absolute;
+    bottom: 0px;
     width: 100%;
   }
   .timeSection a{
