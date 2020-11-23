@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./timer.css";
 import topLeft from "../img/khalifa-uni1.png";
 import topRight from "../img/logos.png";
-import welcome from "../img/welcome2.png";
+import welcome from "../img/welcome1.png";
 import sheikh from "../img/sheikh.png";
 
 // import { fainstagram } from "@fortawesome/free-solid-svg-icons";
@@ -11,11 +11,12 @@ import { faFacebook, faInstagram, faTwitter, faYoutube } from "@fortawesome/free
 
 function App() {
   const calculateTimeLeft = () => {
-    let year = new Date().getFullYear();
     const difference = new Date(2020, 10, 24, 11) - new Date();
+    // const difference = new Date(2020, 10, 23, 12, 12) - new Date();
     let timeLeft = {};
 
-    console.log(window.innerWidth, window.innerHeight);
+    // console.log(window.innerWidth, window.innerHeight);
+    console.log("difference", difference);
 
     if (difference > 0) {
       var dd = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -40,12 +41,15 @@ function App() {
         seconds: ss,
       };
     }
-
+    if (difference < 1){
+      window.location.href = 'https://www.fast.com';
+    }
+    console.log("timeLeft: ", timeLeft.seconds);
     return timeLeft;
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const [year] = useState(new Date().getFullYear());
+  // const [year] = useState(new Date().getFullYear());
 
   useEffect(() => {
     setTimeout(() => {
@@ -65,35 +69,35 @@ function App() {
   return (
     <>
       <div className="section-1">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <img class="img-fluid float-left tLeft" src={topLeft}></img>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <img className="img-fluid float-left tLeft" src={topLeft}></img>
             </div>
-            <div class="col">
-              <img class="img-fluid float-right" src={topRight}></img>
+            <div className="col">
+              <img className="img-fluid float-right" src={topRight}></img>
             </div>
           </div>
         </div>
       </div>
-      <div class="container mt-3">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="row">
-              <div class="col-12">
-                <div class="sidebar-content">
-                  <img class="img-fluid float-left" src={welcome}></img>
+      <div className="container mt-3">
+        <div className="row">
+          <div className="col-sm-4">
+            <div className="row">
+              <div className="col-12">
+                <div className="sidebar-content">
+                  <img className="img-fluid float-left" src={welcome}></img>
                   <br />
                   <h3> Tuesday, 24 November 2020</h3>
                   <br />
                 </div>
               </div>
-              <div class="col-12">
-                <div class="sidebar-content">
+              <div className="col-12">
+                <div className="sidebar-content">
                   <div className="timer">
                     <h2>
                       <div className="timerText ">
-                        <div class="row text-center">
+                        <div className="row text-center">
                           <div className="col-4 col-xs-4">
                             {timerComponents[0]}
                           </div>
@@ -104,7 +108,7 @@ function App() {
                             {timerComponents[2]}
                           </div>
                         </div>
-                        <div class="row text-center">
+                        <div className="row text-center">
                           <div className="col-4 col-xs-4">
                             <span>Hours</span>
                           </div>
@@ -122,10 +126,10 @@ function App() {
               </div>
             </div>
           </div>
-          <div class="col-sm-8">
-            <div class="main-content">
+          <div className="col-sm-8">
+            <div className="main-content">
               <img
-                class="img-fluid float-right"
+                className="img-fluid float-right"
                 src={sheikh}
                 style={{ width: "60%" }}
               ></img>
