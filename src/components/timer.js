@@ -58,12 +58,12 @@ function App() {
       };
     }
     if (difference < 1 && flag === 0) {
-    // if (ss < 3 && flag === 0) {
-      setIsTimeOver(true);
-      setTimeout(() => {
-        window.location.href = "https://holofair.app/thh/?event=zone&THH";
-      }, 10000);
-      flag = 1;
+      // if (ss < 3 && flag === 0) {
+      // setIsTimeOver(true);
+      // setTimeout(() => {
+      window.location.href = "https://holofair.app/thh/?event=zone&THH";
+      // }, 10000);
+      // flag = 1;
     }
     // console.log("timeLeft: ", timeLeft.seconds);
     return timeLeft;
