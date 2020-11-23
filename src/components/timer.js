@@ -2,21 +2,33 @@ import React, { useEffect, useState } from "react";
 import "./timer.css";
 import topLeft from "../img/khalifa-uni1.png";
 import topRight from "../img/logos.png";
-import welcome from "../img/welcome1.png";
-import sheikh from "../img/sheikh.png";
+import welcome from "../img/welcome2.png";
+import sheikh from "../img/sheikh1.png";
 
 // import { fainstagram } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   const calculateTimeLeft = () => {
+    // var currentLocation = window.location;
+    // console.log(currentLocation);
+    // if (currentLocation.href === "https://www.kunationalday.ae/"){
+    //   window.location.href = "https://khalifa-university.web.app/";
+    //   // console.log("YEE");
+    // }
+
     const difference = new Date(2020, 10, 24, 11) - new Date();
     // const difference = new Date(2020, 10, 23, 12, 12) - new Date();
     let timeLeft = {};
 
     // console.log(window.innerWidth, window.innerHeight);
-    console.log("difference", difference);
+    // console.log("difference", difference);
 
     if (difference > 0) {
       var dd = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -41,10 +53,10 @@ function App() {
         seconds: ss,
       };
     }
-    if (difference < 1){
-      window.location.href = 'https://www.fast.com';
+    if (difference < 1) {
+      window.location.href = "https://holofair.app/thh/?event=zone&THH";
     }
-    console.log("timeLeft: ", timeLeft.seconds);
+    // console.log("timeLeft: ", timeLeft.seconds);
     return timeLeft;
   };
 
@@ -72,21 +84,33 @@ function App() {
         <div className="container">
           <div className="row">
             <div className="col">
-              <img className="img-fluid float-left tLeft" src={topLeft}></img>
+              <img
+                alt="Khalifa University"
+                className="img-fluid float-left tLeft"
+                src={topLeft}
+              ></img>
             </div>
             <div className="col">
-              <img className="img-fluid float-right" src={topRight}></img>
+              <img
+                alt="Seeds Of The Union"
+                className="img-fluid float-right tright"
+                src={topRight}
+              ></img>
             </div>
           </div>
         </div>
       </div>
-      <div className="container mt-3">
+      <div className="container mt-3 mainContainer">
         <div className="row">
           <div className="col-sm-4">
             <div className="row">
               <div className="col-12">
                 <div className="sidebar-content">
-                  <img className="img-fluid float-left" src={welcome}></img>
+                  <img
+                    alt="Welcome to KU Virtual National Day Ceremony 2020"
+                    className="img-fluid float-left"
+                    src={welcome}
+                  ></img>
                   <br />
                   <h3> Tuesday, 24 November 2020</h3>
                   <br />
@@ -96,8 +120,8 @@ function App() {
                 <div className="sidebar-content">
                   <div className="timer">
                     <h2>
-                      <div className="timerText ">
-                        <div className="row text-center">
+                      <div className="timerText">
+                        <div className="row text-center numbers">
                           <div className="col-4 col-xs-4">
                             {timerComponents[0]}
                           </div>
@@ -108,7 +132,7 @@ function App() {
                             {timerComponents[2]}
                           </div>
                         </div>
-                        <div className="row text-center">
+                        <div className="row text-center texts">
                           <div className="col-4 col-xs-4">
                             <span>Hours</span>
                           </div>
@@ -129,9 +153,9 @@ function App() {
           <div className="col-sm-8">
             <div className="main-content">
               <img
-                className="img-fluid float-right"
+                alt="Sheikh"
+                className="img-fluid float-right sheikh"
                 src={sheikh}
-                style={{ width: "60%" }}
               ></img>
             </div>
           </div>
@@ -140,19 +164,21 @@ function App() {
 
       <div className="timeSection">
         <h3>
-          #KU2020NationalDay {" "}
-          <a href="https://www.instagram.com/khalifa_university/">
-            <FontAwesomeIcon icon={faInstagram} style={{color: "black"}}/>{" "}
-          </a>
-          <a href="https://www.facebook.com/khalifauniversity/">
-            <FontAwesomeIcon icon={faFacebook} style={{color: "black"}}/>{" "}
-          </a>
-          <a href="https://www.youtube.com/user/KhalifaUniversity">
-            <FontAwesomeIcon icon={faYoutube} style={{color: "black"}}/>{" "}
-          </a>
-          <a href="https://twitter.com/KhalifaUni">
-            <FontAwesomeIcon icon={faTwitter} style={{color: "black"}}/>{" "}
-          </a>
+          #KU2020NationalDay {" "} {'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}
+          {/* <div className="social-icons"> */}
+            <a href="https://www.instagram.com/khalifa_university/">
+              <FontAwesomeIcon icon={faInstagram} style={{ color: "black" }} />{" "}
+            </a>
+            <a href="https://www.facebook.com/khalifauniversity/">
+              <FontAwesomeIcon icon={faFacebook} style={{ color: "black" }} />{" "}
+            </a>
+            <a href="https://www.youtube.com/user/KhalifaUniversity">
+              <FontAwesomeIcon icon={faYoutube} style={{ color: "black" }} />{" "}
+            </a>
+            <a href="https://twitter.com/KhalifaUni">
+              <FontAwesomeIcon icon={faTwitter} style={{ color: "black" }} />{" "}
+            </a>
+          {/* </div> */}
         </h3>
       </div>
     </>

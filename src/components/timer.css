@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "DINNext";
+  src: local("DINNext"),
+    url(../fonts/DINNextLTPro-Medium.otf) format("truetype");
+}
+
 .bg {
   /* background-image: url("./asset4.png"); */
 
@@ -16,23 +22,53 @@
 
 .tLeft {
   /* margin-top: 35px; */
+  margin-left: 18px;
+  transform: scale(0.6);
+}
+.tright {
+  /* margin-top: 35px; */
+  margin-right: 50px;
+  transform: scale(0.6);
 }
 /* 
 .section-1 {
   margin: 15px;
 } */
 
+.numbers {
+  /* margin-left: -3px; */
+  color: red;
+}
+
+.numbers span {
+  font-size: 4vw;
+}
+
+.texts span {
+  font-size: 2vw;
+}
+
+.timerText {
+  font-family: DINNext, serif;
+  margin-left: -13px;
+}
+
 .container {
   max-width: 100%;
 }
 
-.timer span{
-  /* margin: 43px; */
-  font-size: 2vw;
+.sidebar-content h3 {
+  font-family: DINNext, serif;
+  margin-left: 15px;
 }
 
-.timerText span{
-  font-size: 2vw;
+.timer span {
+  /* margin: 43px; */
+  /* font-size: 2vw; */
+}
+
+.timerText span {
+  /* font-size: 2vw; */
   /* margin: 10px; */
 }
 
@@ -41,14 +77,33 @@
 }
 
 .timeSection {
-  margin-left: 16px;
+  margin-left: 94px;
+  margin-top: 76px;
+  /* margin-left: 16px; */
   /* margin-top: 1rem; */
   padding: 1rem;
   /* background-color: rgb(235, 195, 64); */
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.timeSection h3 {
+  margin-left: 15px;
+  font-family: DINNext, serif;
+  margin-bottom: -10px;
+}
+
+.timeSection a{
+  padding-left: 5px;
+}
+
+.mainContainer {
+  /* margin-left: 35px;
+  padding-right: 40px; */
+  margin-left: 92px;
+  padding-right: 112px;
 }
 
 @media only screen and (max-width: 2000px) {
@@ -103,13 +158,47 @@
   }
 }
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles */
-  .timerText span{
+  .timerText span {
     font-size: 4vw;
+    margin-left: -8px;
     /* margin: 10px; */
+  }
+  .timeSection h3 {
+    margin-bottom: 0px;
+  }
+  .tLeft {
+    margin-left: 0px;
+    transform: scale(1);
+  }
+  .tright {
+    margin-right: 0px;
+    transform: scale(1);
+  }
+  .mainContainer {
+    /* padding-right: 0px; */
+    margin-left: 0px;
+    padding-right: 20px;
+  }
+  .sheikh {
+    right: 0px;
+    position: relative;
+  }
+  .timeSection{
+    margin-left: 0px;
+    /* margin-top: 0px; */
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+  }
+  .timeSection a{
+    padding-left: 1px;
   }
 }
 
+.sheikh {
+  width: 60%;
+  right: 90px;
+  position: absolute;
+}
