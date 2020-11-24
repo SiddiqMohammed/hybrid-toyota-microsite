@@ -61,7 +61,7 @@ function App() {
       // if (ss < 3 && flag === 0) {
       // setIsTimeOver(true);
       // setTimeout(() => {
-      window.location.href = "https://holofair.app/thh/?event=zone&THH";
+      // window.location.href = "https://holofair.app/thh/?event=zone&THH";
       // }, 10000);
       // flag = 1;
     }
@@ -125,7 +125,8 @@ function App() {
                       src={welcome}
                     ></img>
                     <br />
-                    <h3> Tuesday, 24 November 2020</h3>
+                    {/* <h3> Tuesday, 24 November 2020</h3> */}
+                    <h3>Coming Soon!</h3>
                     <br />
                   </div>
                 </div>
@@ -133,7 +134,7 @@ function App() {
                   <div className="sidebar-content">
                     <div className="timer">
                       <h2>
-                        <div className="timerText">
+                        {/* <div className="timerText">
                           <div className="row text-center numbers">
                             <div className="col-4 col-xs-4">
                               {timerComponents[0]}
@@ -156,8 +157,11 @@ function App() {
                               <span>Seconds</span>
                             </div>
                           </div>
-                        </div>
+                        </div> */}
                       </h2>
+                      {/* <div className="soon-text">
+                        <h1>Coming Soon!</h1>
+                      </div> */}
                     </div>
                   </div>
                 </div>
