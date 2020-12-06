@@ -20,22 +20,9 @@
   color: black;
 }
 
-.outer-div {
-  /* display: flex;
-  align-items: center;
-  flex-wrap: wrap; */
-  /* display: inline-block;
-    vertical-align: middle;
-    float: none; */
-}
-
 .input-fields {
   margin-top: 10%;
 }
-
-/* .input-fields button{
-  margin-top: 10px;
-} */
 
 .form {
   /* background-image: url('./bg.png');
@@ -43,8 +30,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 43rem;
-  margin-left: 6.5rem;
+  /* width: 43rem;
+  margin-left: 6.5rem; */
+  align-items: center;
 }
 
 .form img {
@@ -54,7 +42,7 @@
 
 .form > h1 {
   font-family: "Cocogoose", sans-serif;
-  color: white;
+  color: black;
   margin-bottom: 32px;
   text-align: center;
   font-size: 2rem;
