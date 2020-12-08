@@ -1,11 +1,17 @@
 @font-face {
-  font-family: "DINNext";
-  src: local("DINNext"),
-    url(../fonts/DINNextLTPro-Medium.otf) format("truetype");
+  font-family: "AgipoLight";
+  src: local("AgipoLight"),
+    url(../fonts/AgipoLight-Regular.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "FjallaOne";
+  src: local("FjallaOne"),
+    url(../fonts/FjallaOne-Regular.ttf) format("truetype");
 }
 
 .bg {
-  /* background-image: url("./asset4.png"); */
+  background-image: url("../img/bg.png");
   /* background-color: rgb(253, 236, 0); */
   height: 100%;
 
@@ -21,7 +27,7 @@
 }
 
 .input-fields {
-  margin-top: 10%;
+  /* margin-top: 10%; */
 }
 
 .form {

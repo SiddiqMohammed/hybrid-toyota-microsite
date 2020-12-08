@@ -22,18 +22,73 @@ function App() {
   // const [flag, setFlag] = useState(false);
 
   const calculateTimeLeft = () => {
-    // const difference = new Date().getHours();
-    var timeLeft = new Date().getMinutes();
-    // console.log(jsonData.coupon1);
+    var hours = new Date().getHours();
+    var minutes = new Date().getMinutes();
 
-    timeLeft = timeLeft % 10;
-    // console.log(timeLeft);
+    // if (hours >= 13 && hours <= 21) {
+    //   if (minutes === 30 && minutes === 0) {
+    //   }
+    // }
 
-    return timeLeft;
+    var timeLeft = 1;
+    var timeLeft1 = "";
+
+    if (hours === 13 && minutes === 30) {
+      timeLeft1 = "session1";
+    }
+    if (hours === 14 && minutes === 0) {
+      timeLeft1 = "session2";
+    }
+    if (hours === 14 && minutes === 30) {
+      timeLeft1 = "session3";
+    }
+    if (hours === 15 && minutes === 0) {
+      timeLeft1 = "session4";
+    }
+    if (hours === 15 && minutes === 30) {
+      timeLeft1 = "session5";
+    }
+    if (hours === 16 && minutes === 0) {
+      timeLeft1 = "session6";
+    }
+    if (hours === 16 && minutes === 30) {
+      timeLeft1 = "session7";
+    }
+    if (hours === 17 && minutes === 0) {
+      timeLeft1 = "session8";
+    }
+    if (hours === 17 && minutes === 30) {
+      timeLeft1 = "session9";
+    }
+    if (hours === 18 && minutes === 0) {
+      timeLeft1 = "session10";
+    }
+    if (hours === 18 && minutes === 30) {
+      timeLeft1 = "session11";
+    }
+    if (hours === 19 && minutes === 0) {
+      timeLeft1 = "session12";
+    }
+    if (hours === 19 && minutes === 30) {
+      timeLeft1 = "session13";
+    }
+    if (hours === 20 && minutes === 0) {
+      timeLeft1 = "session14";
+    }
+    if (hours === 20 && minutes === 30) {
+      timeLeft1 = "session15";
+    }
+    if (hours === 21 && minutes === 0) {
+      timeLeft1 = "session16";
+    }
+    if (hours !== 0) {
+      timeLeft1 = "session0";
+    }
+
+    return timeLeft1;
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  // const [year] = useState(new Date().getFullYear());
 
   useEffect(() => {
     setTimeout(() => {
@@ -60,12 +115,13 @@ function App() {
       } else if (timeLeft === 9) {
         setCouponVal(jsonData.coupon9);
       }
+      // Test
+      else if (timeLeft === "session0") {
+        setCouponVal(jsonData.coupon0);
+      }
     }, 1000);
   });
   const handleSubmitCode = (e) => {
-    // var d = new Date();
-    // console.log("date: ", d);
-
     e.preventDefault();
     // setLoader(true);
 
@@ -94,18 +150,16 @@ function App() {
     e.preventDefault();
     setLoader(true);
 
-    var session = sessionCheck();
-    // db.collection('users').doc("day").collection(session).set({
-    //   password: "password",
-    //   name: "this.name",
-    //   rollno: "this.rollno"
-    // })
+    // var session = sessionCheck();
+    var session = "session0";
+
     db.collection(session)
       .add({
         Name: name,
         Email: email,
         Number: number,
         dateTime: String(d),
+        Entry: 0,
       })
       .then(() => {
         alert("Message has been submitted!");
@@ -125,76 +179,74 @@ function App() {
   return (
     <>
       <div className="outer-div">
-        <div className="text-center main-text">
+        {/* <div className="text-center main-text">
           <h1>Your Coupon Is: {timeLeft}</h1>
           <h1>Your Coupon Is: {couponVal}</h1>
-        </div>
+        </div> */}
 
         <div className="input-fields text-center">
-          <form className="form" onSubmit={handleSubmitCode}>
-            <h2>Enter the code:</h2>
+          <div className="">
+            <form className="form" onSubmit={handleSubmitCode}>
+              <h2>Enter the code:</h2>
 
-            <input
-              required
-              type="text"
-              value={code}
-              id="Coupon Code"
-              onChange={(e) => setCode(e.target.value)}
-              name="Coupon Code"
-            />
-            <button type="submit">Submit</button>
+              <input
+                required
+                type="text"
+                value={code}
+                id="Coupon Code"
+                onChange={(e) => setCode(e.target.value)}
+                name="Coupon Code"
+              />
+              <button type="submit">Submit</button>
 
-            {/* <div style={{visibility: showFields? "visible" : "hidden"}}> */}
-            <div style={{ visibility: showFields ? "hidden" : "visible" }}>
-              <form className="form" onSubmit={handleSubmit}>
-                <h1>Please fill in your details.</h1>
+              {/* <div style={{visibility: showFields? "visible" : "hidden"}}> */}
+              <div style={{ visibility: showFields ? "hidden" : "visible" }}>
+                <form className="form" onSubmit={handleSubmit}>
+                  <h1>Please fill in your details.</h1>
 
-                {/* <label>
-                  9. Do you have any suggestions and feedback you would like to
-                  share? Were there any concerns that you feel were overlooked?
-                </label> */}
-                <p>Enter your name:</p>
-                <input
-                  required
-                  type="text"
-                  value={name}
-                  id="Name"
-                  onChange={(e) => setName(e.target.value)}
-                  name="Name"
-                />
+                  <p>Enter your name:</p>
+                  <input
+                    required
+                    type="text"
+                    value={name}
+                    id="Name"
+                    onChange={(e) => setName(e.target.value)}
+                    name="Name"
+                  />
 
-                <p>Enter your email:</p>
-                <input
-                  required
-                  type="text"
-                  value={email}
-                  id="Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  name="Email"
-                />
+                  <p>Enter your email:</p>
+                  <input
+                    required
+                    type="text"
+                    value={email}
+                    id="Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    name="Email"
+                  />
 
-                <p>Enter your number:</p>
-                <input
-                  required
-                  type="text"
-                  value={number}
-                  id="Number"
-                  onChange={(e) => setNumber(e.target.value)}
-                  name="Number"
-                />
+                  <p>Enter your number:</p>
+                  <input
+                    required
+                    type="text"
+                    value={number}
+                    id="Number"
+                    onChange={(e) => setNumber(e.target.value)}
+                    name="Number"
+                  />
 
-                <button
-                  type="submit"
-                  style={{
-                    background: loader ? "#acc" : "rgb(147, 213, 0)",
-                    color: "rgb(53, 52, 54)",
-                  }}
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </form>
+                  <button
+                    type="submit"
+                    style={{
+                      background: loader ? "#acc" : "rgb(147, 213, 0)",
+                      color: "rgb(53, 52, 54)",
+                    }}
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </>
