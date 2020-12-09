@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./timer.css";
 import jsonData from "../data/data.json";
 import { db } from "../firebase";
+// import
 
 // // import { fainstagram } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -137,7 +138,7 @@ function App() {
 
   const [loader, setLoader] = useState(false);
 
-  const [state, setState] = useState({ x: 25 });
+  // const [state, setState] = useState({ x: 25 });
 
   function sessionCheck() {
     return "session" + timeLeft.toString();
@@ -185,26 +186,40 @@ function App() {
         </div> */}
 
         <div className="input-fields text-center">
-          <div className="">
+          <div className="yeer">
+            <h1>
+              <span className="top-text">THE</span>
+            </h1>
+            <h1>
+              COMM
+              <span className="middle-text">YOU</span>
+              NITY
+            </h1>
+            <h1>
+              <span className="bottom-text">FESTIVAL</span>
+            </h1>
+            {/* <img src={} alt="Italian Trulli"/> */}
             <form className="form" onSubmit={handleSubmitCode}>
-              <h2>Enter the code:</h2>
+              <div className="code-label" style={{ display: showFields ? "none" : "block" }}>
+                <h2>Enter Secret Code:</h2>
 
-              <input
-                required
-                type="text"
-                value={code}
-                id="Coupon Code"
-                onChange={(e) => setCode(e.target.value)}
-                name="Coupon Code"
-              />
-              <button type="submit">Submit</button>
+                <input
+                  required
+                  type="text"
+                  value={code}
+                  id="Coupon Code"
+                  onChange={(e) => setCode(e.target.value)}
+                  name="Coupon Code"
+                />
+                <button type="submit">Submit</button>
+              </div>
 
-              {/* <div style={{visibility: showFields? "visible" : "hidden"}}> */}
-              <div style={{ visibility: showFields ? "hidden" : "visible" }}>
+              <div className="details-label" style={{ display: showFields ? "block" : "none" }}>
+                {/* <div style={{ visibility: showFields ? "hidden" : "visible" }}> */}
                 <form className="form" onSubmit={handleSubmit}>
-                  <h1>Please fill in your details.</h1>
+                  {/* <h1>Please fill in your details.</h1> */}
 
-                  <p>Enter your name:</p>
+                  <p>Name*</p>
                   <input
                     required
                     type="text"
@@ -214,7 +229,7 @@ function App() {
                     name="Name"
                   />
 
-                  <p>Enter your email:</p>
+                  <p>E-mail*</p>
                   <input
                     required
                     type="text"
@@ -224,7 +239,7 @@ function App() {
                     name="Email"
                   />
 
-                  <p>Enter your number:</p>
+                  <p>Phone Number*</p>
                   <input
                     required
                     type="text"
