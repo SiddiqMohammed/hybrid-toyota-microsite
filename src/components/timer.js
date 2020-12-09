@@ -127,18 +127,19 @@ function App() {
     // setLoader(true);
 
     if (couponVal === code) {
-      console.log("Access Granted!");
+      // console.log("Access Granted!");
       setShowFields(true);
     }
   };
 
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
 
   const [loader, setLoader] = useState(false);
 
-  console.log("loader", loader);
+  // console.log("loader", loader);
 
   // const [state, setState] = useState({ x: 25 });
 
@@ -147,35 +148,44 @@ function App() {
   }
 
   const handleSubmit = (e) => {
-    var d = new Date();
-    console.log("date: ", d);
+    if (number.length < 10) {
+      alert("Make sure your number is right!");
+    } else {
+      var d = new Date();
+      // console.log("date: ", d);
 
-    e.preventDefault();
-    setLoader(true);
+      e.preventDefault();
+      setLoader(true);
 
-    // var session = sessionCheck();
-    var session = "session0";
+      // var session = sessionCheck();
+      var session = "session0";
 
-    db.collection(session)
-      .add({
-        Name: name,
-        Email: email,
-        Number: number,
-        dateTime: String(d),
-        Entry: 0,
-      })
-      .then(() => {
-        // alert("Message has been submitted!");
-        setLoader(false);
-      })
-      .catch((error) => {
-        alert(error.message);
-        setLoader(false);
-      });
+      db.collection(session)
+        .add({
+          FirstName: firstName,
+          LastName: lastName,
+          Email: email,
+          Number: number,
+          dateTime: String(d),
+          Entry: 0,
+        })
+        .then(() => {
+          // alert("Message has been submitted!");
+          // setLoader(false);
+          setTimeout(function () {
+            window.location.reload();
+          }, 3000);
+        })
+        .catch((error) => {
+          alert(error.message);
+          // setLoader(false);
+        });
 
-    setName("");
-    setNumber("");
-    setEmail("");
+      setFirstName("");
+      setLastName("");
+      setNumber("");
+      setEmail("");
+    }
   };
 
   // console.log(code);
@@ -219,6 +229,14 @@ function App() {
                 <button type="submit">Submit</button>
               </div>
 
+              {/* <div className="success-text" style={{display: loader? "block" : "block"}}> */}
+              <div
+                className="success-text"
+                style={{ display: loader ? "block" : "none" }}
+              >
+                <p>You are successfully registered, please check your email.</p>
+              </div>
+
               <div
                 className="details-label"
                 style={{ display: showFields ? "block" : "none" }}
@@ -231,9 +249,9 @@ function App() {
                   <input
                     required
                     type="text"
-                    value={name}
+                    value={firstName}
                     id="Name"
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setFirstName(e.target.value)}
                     name="Name"
                   />
 
@@ -241,9 +259,9 @@ function App() {
                   <input
                     required
                     type="text"
-                    value={name}
+                    value={lastName}
                     id="Name"
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setLastName(e.target.value)}
                     name="Name"
                   />
 

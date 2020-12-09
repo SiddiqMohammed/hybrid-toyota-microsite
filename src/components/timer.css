@@ -54,7 +54,7 @@
 
 .code-label {
   position: absolute;
-  top: 50%;
+  top: 45%;
 }
 
 .code-label h2 {
@@ -64,6 +64,11 @@
   margin: 0;
   font-size: 20px;
   /* margin-top: 136px; */
+}
+
+.success-text p{
+  font-family: "FjallaOne", sans-serif;
+  margin-top: 75px;
 }
 
 .details-label {
