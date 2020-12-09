@@ -138,6 +138,8 @@ function App() {
 
   const [loader, setLoader] = useState(false);
 
+  console.log("loader", loader);
+
   // const [state, setState] = useState({ x: 25 });
 
   function sessionCheck() {
@@ -163,7 +165,7 @@ function App() {
         Entry: 0,
       })
       .then(() => {
-        alert("Message has been submitted!");
+        // alert("Message has been submitted!");
         setLoader(false);
       })
       .catch((error) => {
@@ -200,7 +202,10 @@ function App() {
             </h1>
             {/* <img src={} alt="Italian Trulli"/> */}
             <form className="form" onSubmit={handleSubmitCode}>
-              <div className="code-label" style={{ display: showFields ? "none" : "block" }}>
+              <div
+                className="code-label"
+                style={{ display: showFields ? "none" : "block" }}
+              >
                 <h2>Enter Secret Code:</h2>
 
                 <input
@@ -214,12 +219,25 @@ function App() {
                 <button type="submit">Submit</button>
               </div>
 
-              <div className="details-label" style={{ display: showFields ? "block" : "none" }}>
+              <div
+                className="details-label"
+                style={{ display: showFields ? "block" : "none" }}
+              >
                 {/* <div style={{ visibility: showFields ? "hidden" : "visible" }}> */}
                 <form className="form" onSubmit={handleSubmit}>
                   {/* <h1>Please fill in your details.</h1> */}
 
-                  <p>Name*</p>
+                  <p>First Name*</p>
+                  <input
+                    required
+                    type="text"
+                    value={name}
+                    id="Name"
+                    onChange={(e) => setName(e.target.value)}
+                    name="Name"
+                  />
+
+                  <p>Last Name*</p>
                   <input
                     required
                     type="text"
@@ -232,7 +250,7 @@ function App() {
                   <p>E-mail*</p>
                   <input
                     required
-                    type="text"
+                    type="email"
                     value={email}
                     id="Email"
                     onChange={(e) => setEmail(e.target.value)}
@@ -242,22 +260,15 @@ function App() {
                   <p>Phone Number*</p>
                   <input
                     required
-                    type="text"
+                    type="number"
+                    minLength="10"
                     value={number}
                     id="Number"
                     onChange={(e) => setNumber(e.target.value)}
                     name="Number"
                   />
 
-                  <button
-                    type="submit"
-                    style={{
-                      background: loader ? "#acc" : "rgb(147, 213, 0)",
-                      color: "rgb(53, 52, 54)",
-                    }}
-                  >
-                    Submit
-                  </button>
+                  <button type="submit">Submit</button>
                 </form>
               </div>
             </form>
