@@ -54,26 +54,63 @@
 
 .code-label {
   position: absolute;
-  top: 45%;
+  top: 42%;
 }
 
 .code-label h2 {
   color: white;
   font-family: "FjallaOne", sans-serif;
   text-transform: capitalize;
-  margin: 0;
+  margin: 0 0 5px 0;
   font-size: 20px;
+  font-weight: 10;
   /* margin-top: 136px; */
 }
 
-.success-text p{
+.code-label > input {
+  font-family: "Montserrat", sans-serif;
+  padding: 25px 0 25px 0;
+  border-radius: 3px;
+  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
+  margin-bottom: 5px;
+  border: 3px solid #ffb900;
+  /* border: none; */
+  /* background: #fff; */
+  font-size: 22px;
+  /* color: rgb(0, 0, 32); */
+  outline: none;
+  border-radius: 5px;
+  height: 1.2rem;
+  text-align: center;
+}
+
+.submit-button button {
+  margin-top: 10px;
+  font-family: "FjallaOne", sans-serif;
+  color: black;
+  /* padding: 20px; */
+  border: none;
+  background-color: white;
+  /* font-weight: 600; */
+  /* font-size: 37px; */
+  border-radius: 2px;
+  color: black;
+  cursor: pointer;
+  /* transition: 0.2s ease-in-out; */
+  /* margin-top: 45px; */
+  width: 40%;
+  /* margin-left: 23px; */
+  height: 35px;
+}
+
+.success-text p {
   font-family: "FjallaOne", sans-serif;
   margin-top: 75px;
 }
 
 .details-label {
   position: absolute;
-  top: 36%;
+  top: 30%;
 }
 
 .details-label p {
@@ -138,7 +175,7 @@
   border-radius: 3px;
   /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
   margin-bottom: 5px;
-  border: 3px solid #FFB900;
+  border: 3px solid #ffb900;
   /* border: none; */
   /* background: #fff; */
   font-size: 22px;
@@ -146,6 +183,7 @@
   outline: none;
   border-radius: 5px;
   height: 1.2rem;
+  text-align: center;
 }
 
 .form > select {
@@ -183,7 +221,7 @@
 }
 
 .form > button {
-  font-family: 'FjallaOne', sans-serif;
+  font-family: "FjallaOne", sans-serif;
   color: black;
   /* padding: 20px; */
   border: none;
@@ -223,6 +261,26 @@
   /* background-color: rgb(0, 0, 196); */
 }
 
+.checkbox label {
+  float: right;
+}
+
+.checkbox input {
+  margin-top: 3px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: red; */
+  color: white;
+  text-align: center;
+  transform: scale(0.5);
+  left: -30px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -230,7 +288,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 

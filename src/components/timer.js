@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./timer.css";
 import jsonData from "../data/data.json";
 import { db } from "../firebase";
-// import
+import logo from "../img/footer.png";
 
 // // import { fainstagram } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -148,44 +148,40 @@ function App() {
   }
 
   const handleSubmit = (e) => {
-    if (number.length < 10) {
-      alert("Make sure your number is right!");
-    } else {
-      var d = new Date();
-      // console.log("date: ", d);
+    var d = new Date();
+    // console.log("date: ", d);
 
-      e.preventDefault();
-      setLoader(true);
+    e.preventDefault();
+    setLoader(true);
 
-      // var session = sessionCheck();
-      var session = "session0";
+    // var session = sessionCheck();
+    var session = "session0";
 
-      db.collection(session)
-        .add({
-          FirstName: firstName,
-          LastName: lastName,
-          Email: email,
-          Number: number,
-          dateTime: String(d),
-          Entry: 0,
-        })
-        .then(() => {
-          // alert("Message has been submitted!");
-          // setLoader(false);
-          setTimeout(function () {
-            window.location.reload();
-          }, 3000);
-        })
-        .catch((error) => {
-          alert(error.message);
-          // setLoader(false);
-        });
+    db.collection(session)
+      .add({
+        FirstName: firstName,
+        LastName: lastName,
+        Email: email,
+        Number: number,
+        dateTime: String(d),
+        Entry: 0,
+      })
+      .then(() => {
+        // alert("Message has been submitted!");
+        // setLoader(false);
+        setTimeout(function () {
+          window.location.reload();
+        }, 3000);
+      })
+      .catch((error) => {
+        alert(error.message);
+        // setLoader(false);
+      });
 
-      setFirstName("");
-      setLastName("");
-      setNumber("");
-      setEmail("");
-    }
+    setFirstName("");
+    setLastName("");
+    setNumber("");
+    setEmail("");
   };
 
   // console.log(code);
@@ -226,7 +222,9 @@ function App() {
                   onChange={(e) => setCode(e.target.value)}
                   name="Coupon Code"
                 />
-                <button type="submit">Submit</button>
+                <div className="submit-button">
+                  <button type="submit">Submit</button>
+                </div>
               </div>
 
               {/* <div className="success-text" style={{display: loader? "block" : "block"}}> */}
@@ -279,18 +277,34 @@ function App() {
                   <input
                     required
                     type="number"
-                    minLength="10"
+                    min="10"
                     value={number}
                     id="Number"
                     onChange={(e) => setNumber(e.target.value)}
                     name="Number"
                   />
+                  <div className="checkbox">
+                    <label for="vehicle1"> I have a bike</label>
+                    <input
+                      required
+                      type="checkbox"
+                      id="vehicle1"
+                      name="vehicle1"
+                      value="Bike"
+                    />
+                    <br></br>
+                  </div>
 
-                  <button type="submit">Submit</button>
+                  <button style={{ marginTop: "0" }} type="submit">
+                    Submit
+                  </button>
                 </form>
               </div>
             </form>
           </div>
+        </div>
+        <div className="footer">
+          <img src={logo} alt="Festival Plaza" />
         </div>
       </div>
     </>
