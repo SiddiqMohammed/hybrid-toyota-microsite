@@ -1,5 +1,6 @@
 {
   "name": "landingpage-react-template",
+  "homepage": "http://commyounityfestival.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

@@ -138,8 +138,9 @@ function App() {
   const [email, setEmail] = useState("");
 
   const [loader, setLoader] = useState(false);
+  const [focus, setFocus] = useState(false);
 
-  // console.log("loader", loader);
+  console.log("loader", focus);
 
   // const [state, setState] = useState({ x: 25 });
 
@@ -215,6 +216,8 @@ function App() {
                 <h2>Enter Secret Code:</h2>
 
                 <input
+                  onFocus={(e) => setFocus(true)}
+                  onBlur={(e) => setFocus(false)}
                   required
                   type="text"
                   value={code}
@@ -223,7 +226,9 @@ function App() {
                   name="Coupon Code"
                 />
                 <div className="submit-button">
-                  <button type="submit">Submit</button>
+                  <button type="submit" onClick={(e) => setFocus(false)}>
+                    Submit
+                  </button>
                 </div>
               </div>
 
@@ -245,6 +250,8 @@ function App() {
 
                   <p>First Name*</p>
                   <input
+                    onFocus={(e) => setFocus(true)}
+                    onBlur={(e) => setFocus(false)}
                     required
                     type="text"
                     value={firstName}
@@ -255,6 +262,8 @@ function App() {
 
                   <p>Last Name*</p>
                   <input
+                    onFocus={(e) => setFocus(true)}
+                    onBlur={(e) => setFocus(false)}
                     required
                     type="text"
                     value={lastName}
@@ -265,6 +274,8 @@ function App() {
 
                   <p>E-mail*</p>
                   <input
+                    onFocus={(e) => setFocus(true)}
+                    onBlur={(e) => setFocus(false)}
                     required
                     type="email"
                     value={email}
@@ -275,6 +286,8 @@ function App() {
 
                   <p>Phone Number*</p>
                   <input
+                    onFocus={(e) => setFocus(true)}
+                    onBlur={(e) => setFocus(false)}
                     required
                     type="number"
                     min="10"
@@ -303,7 +316,7 @@ function App() {
             </form>
           </div>
         </div>
-        <div className="footer">
+        <div className="footer" style={{ display: focus ? "none" : "block" }}>
           <img src={logo} alt="Festival Plaza" />
         </div>
       </div>
