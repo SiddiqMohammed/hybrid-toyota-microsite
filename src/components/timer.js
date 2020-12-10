@@ -62,7 +62,8 @@ function App() {
         timeLeft1 = "";
       }
     }
-    if (hours === 15 && minutes === 30) {
+    // if (hours === 15 && minutes === 30) {
+    if (hours === 15 && minutes%2 === 0) {
       if (seconds < 11) {
         timeLeft1 = 5;
       } else {
@@ -160,7 +161,6 @@ function App() {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
 
-      // var i =
       var day = new Date().getDate();
       var year = new Date().getFullYear();
 
@@ -169,7 +169,6 @@ function App() {
         var cd = day - 10 + 1;
         var mfactor = 16 * cd;
       } else if (year === 2021) {
-        // var cd = day;
         var mfactor = 16 * (day + 18);
       }
 
@@ -230,9 +229,6 @@ function App() {
   const [loader, setLoader] = useState(false);
   const [focus, setFocus] = useState(false);
 
-  // console.log("loader", focus);
-
-  // const [state, setState] = useState({ x: 25 });
 
   function sessionCheck() {
     return "session" + timeLeft.toString();
@@ -245,8 +241,9 @@ function App() {
     e.preventDefault();
     setLoader(true);
 
-    // var session = sessionCheck();
-    var session = "session0";
+    var session = sessionCheck();
+    console.log(session);
+    // var session = "session0";
 
     db.collection(session)
       .add({
