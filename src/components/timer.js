@@ -21,6 +21,7 @@ function App() {
   const [code, setCode] = useState("");
   const [showFields, setShowFields] = useState(false);
   const [couponVal, setCouponVal] = useState("");
+  const [timeLeft2, setTimeLeft2] = useState("");
   // const [flag, setFlag] = useState(false);
 
   const calculateTimeLeft = () => {
@@ -62,8 +63,7 @@ function App() {
         timeLeft1 = "";
       }
     }
-    // if (hours === 15 && minutes === 30) {
-    if (hours === 15 && minutes%2 === 0) {
+    if (hours === 15 && minutes === 30) {
       if (seconds < 11) {
         timeLeft1 = 5;
       } else {
@@ -147,9 +147,8 @@ function App() {
         timeLeft1 = "";
       }
     }
-    // if (hours !== 0) {
-
-    //   timeLeft1 = "session0";
+    // if (hours === 16) {
+    //   timeLeft1 = 1;
     // }
 
     return timeLeft1;
@@ -209,11 +208,15 @@ function App() {
       // else if (timeLeft === "session0") {
       //   setCouponVal(jsonData.coupon0);
       // }
+      setTimeLeft2(timeLeft);
     }, 1000);
   });
   const handleSubmitCode = (e) => {
     e.preventDefault();
     // setLoader(true);
+
+    console.log(code);
+    console.log("couponVal", couponVal);
 
     if (couponVal === code) {
       // console.log("Access Granted!");
@@ -229,7 +232,6 @@ function App() {
   const [loader, setLoader] = useState(false);
   const [focus, setFocus] = useState(false);
 
-
   function sessionCheck() {
     return "session" + timeLeft.toString();
   }
@@ -241,8 +243,10 @@ function App() {
     e.preventDefault();
     setLoader(true);
 
-    var session = sessionCheck();
+    // var session = sessionCheck();
+    var session = "session" + timeLeft.toString();
     console.log(session);
+    console.log("timeLeft", timeLeft2);
     // var session = "session0";
 
     db.collection(session)
