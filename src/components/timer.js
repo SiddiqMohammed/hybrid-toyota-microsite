@@ -147,7 +147,7 @@ function App() {
         timeLeft1 = "";
       }
     }
-    // if (hours === 16) {
+    // if (hours === 17) {
     //   timeLeft1 = 1;
     // }
 
@@ -215,8 +215,8 @@ function App() {
     e.preventDefault();
     // setLoader(true);
 
-    console.log(code);
-    console.log("couponVal", couponVal);
+    // console.log(code);
+    // console.log("couponVal", couponVal);
 
     if (couponVal === code) {
       // console.log("Access Granted!");
