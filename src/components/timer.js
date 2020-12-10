@@ -165,9 +165,8 @@ function App() {
       var year = new Date().getFullYear();
 
       if (year === 2020) {
-        // start from 14th
-        var cd = day - 14 + 1;
-        // setCouponVal(genericData[cd]);
+        // var cd = day - 14 + 1;
+        var cd = day - 10 + 1;
         var mfactor = 16 * cd;
       } else if (year === 2021) {
         // var cd = day;
@@ -175,37 +174,37 @@ function App() {
       }
 
       if (timeLeft === 1) {
-        setCouponVal(genericData(mfactor - 15));
+        setCouponVal(genericData[mfactor - 15]);
       } else if (timeLeft === 2) {
-        setCouponVal(genericData(mfactor - 14));
+        setCouponVal(genericData[mfactor - 14]);
       } else if (timeLeft === 3) {
-        setCouponVal(genericData(mfactor - 13));
+        setCouponVal(genericData[mfactor - 13]);
       } else if (timeLeft === 4) {
-        setCouponVal(genericData(mfactor - 12));
+        setCouponVal(genericData[mfactor - 12]);
       } else if (timeLeft === 5) {
-        setCouponVal(genericData(mfactor - 11));
+        setCouponVal(genericData[mfactor - 11]);
       } else if (timeLeft === 6) {
-        setCouponVal(genericData(mfactor - 10));
+        setCouponVal(genericData[mfactor - 10]);
       } else if (timeLeft === 7) {
-        setCouponVal(genericData(mfactor - 9));
+        setCouponVal(genericData[mfactor - 9]);
       } else if (timeLeft === 8) {
-        setCouponVal(genericData(mfactor - 8));
+        setCouponVal(genericData[mfactor - 8]);
       } else if (timeLeft === 9) {
-        setCouponVal(genericData(mfactor - 7));
+        setCouponVal(genericData[mfactor - 7]);
       } else if (timeLeft === 10) {
-        setCouponVal(genericData(mfactor - 6));
+        setCouponVal(genericData[mfactor - 6]);
       } else if (timeLeft === 11) {
-        setCouponVal(genericData(mfactor - 5));
+        setCouponVal(genericData[mfactor - 5]);
       } else if (timeLeft === 12) {
-        setCouponVal(genericData(mfactor - 4));
+        setCouponVal(genericData[mfactor - 4]);
       } else if (timeLeft === 13) {
-        setCouponVal(genericData(mfactor - 3));
+        setCouponVal(genericData[mfactor - 3]);
       } else if (timeLeft === 14) {
-        setCouponVal(genericData(mfactor - 2));
+        setCouponVal(genericData[mfactor - 2]);
       } else if (timeLeft === 15) {
-        setCouponVal(genericData(mfactor - 1));
+        setCouponVal(genericData[mfactor - 1]);
       } else if (timeLeft === 16) {
-        setCouponVal(genericData(mfactor));
+        setCouponVal(genericData[mfactor]);
       }
       // // Test
       // else if (timeLeft === "session0") {
