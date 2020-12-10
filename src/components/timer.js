@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./timer.css";
 import jsonData from "../data/data.json";
+import genericData from "../data/enum.json";
 import { db } from "../firebase";
 import logo from "../img/footer.png";
 
@@ -25,66 +26,130 @@ function App() {
   const calculateTimeLeft = () => {
     var hours = new Date().getHours();
     var minutes = new Date().getMinutes();
+    var seconds = new Date().getSeconds();
 
-    // if (hours >= 13 && hours <= 21) {
-    //   if (minutes === 30 && minutes === 0) {
-    //   }
-    // }
+    // console.log(year);
+    // console.log(genericData[0]);
 
     var timeLeft = 1;
     var timeLeft1 = "";
 
     if (hours === 13 && minutes === 30) {
-      timeLeft1 = "session1";
+      if (seconds < 11) {
+        timeLeft1 = 1;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 14 && minutes === 0) {
-      timeLeft1 = "session2";
+      if (seconds < 11) {
+        timeLeft1 = 2;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 14 && minutes === 30) {
-      timeLeft1 = "session3";
+      if (seconds < 11) {
+        timeLeft1 = 3;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 15 && minutes === 0) {
-      timeLeft1 = "session4";
+      if (seconds < 11) {
+        timeLeft1 = 4;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 15 && minutes === 30) {
-      timeLeft1 = "session5";
+      if (seconds < 11) {
+        timeLeft1 = 5;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 16 && minutes === 0) {
-      timeLeft1 = "session6";
+      if (seconds < 11) {
+        timeLeft1 = 6;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 16 && minutes === 30) {
-      timeLeft1 = "session7";
+      if (seconds < 11) {
+        timeLeft1 = 7;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 17 && minutes === 0) {
-      timeLeft1 = "session8";
+      if (seconds < 11) {
+        timeLeft1 = 8;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 17 && minutes === 30) {
-      timeLeft1 = "session9";
+      if (seconds < 11) {
+        timeLeft1 = 9;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 18 && minutes === 0) {
-      timeLeft1 = "session10";
+      if (seconds < 11) {
+        timeLeft1 = 10;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 18 && minutes === 30) {
-      timeLeft1 = "session11";
+      if (seconds < 11) {
+        timeLeft1 = 11;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 19 && minutes === 0) {
-      timeLeft1 = "session12";
+      if (seconds < 11) {
+        timeLeft1 = 12;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 19 && minutes === 30) {
-      timeLeft1 = "session13";
+      if (seconds < 11) {
+        timeLeft1 = 13;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 20 && minutes === 0) {
-      timeLeft1 = "session14";
+      if (seconds < 11) {
+        timeLeft1 = 14;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 20 && minutes === 30) {
-      timeLeft1 = "session15";
+      if (seconds < 11) {
+        timeLeft1 = 15;
+      } else {
+        timeLeft1 = "";
+      }
     }
     if (hours === 21 && minutes === 0) {
-      timeLeft1 = "session16";
+      if (seconds < 11) {
+        timeLeft1 = 16;
+      } else {
+        timeLeft1 = "";
+      }
     }
-    if (hours !== 0) {
-      timeLeft1 = "session0";
-    }
+    // if (hours !== 0) {
+
+    //   timeLeft1 = "session0";
+    // }
 
     return timeLeft1;
   };
@@ -95,31 +160,57 @@ function App() {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
 
-      if (timeLeft === 0) {
-        setCouponVal(jsonData.coupon0);
-      } else if (timeLeft === 1) {
-        setCouponVal(jsonData.coupon1);
+      // var i =
+      var day = new Date().getDate();
+      var year = new Date().getFullYear();
+
+      if (year === 2020) {
+        // start from 14th
+        var cd = day - 14 + 1;
+        // setCouponVal(genericData[cd]);
+        var mfactor = 16 * cd;
+      } else if (year === 2021) {
+        // var cd = day;
+        var mfactor = 16 * (day + 18);
+      }
+
+      if (timeLeft === 1) {
+        setCouponVal(genericData(mfactor - 15));
       } else if (timeLeft === 2) {
-        setCouponVal(jsonData.coupon2);
+        setCouponVal(genericData(mfactor - 14));
       } else if (timeLeft === 3) {
-        setCouponVal(jsonData.coupon3);
+        setCouponVal(genericData(mfactor - 13));
       } else if (timeLeft === 4) {
-        setCouponVal(jsonData.coupon4);
+        setCouponVal(genericData(mfactor - 12));
       } else if (timeLeft === 5) {
-        setCouponVal(jsonData.coupon5);
+        setCouponVal(genericData(mfactor - 11));
       } else if (timeLeft === 6) {
-        setCouponVal(jsonData.coupon6);
+        setCouponVal(genericData(mfactor - 10));
       } else if (timeLeft === 7) {
-        setCouponVal(jsonData.coupon7);
+        setCouponVal(genericData(mfactor - 9));
       } else if (timeLeft === 8) {
-        setCouponVal(jsonData.coupon8);
+        setCouponVal(genericData(mfactor - 8));
       } else if (timeLeft === 9) {
-        setCouponVal(jsonData.coupon9);
+        setCouponVal(genericData(mfactor - 7));
+      } else if (timeLeft === 10) {
+        setCouponVal(genericData(mfactor - 6));
+      } else if (timeLeft === 11) {
+        setCouponVal(genericData(mfactor - 5));
+      } else if (timeLeft === 12) {
+        setCouponVal(genericData(mfactor - 4));
+      } else if (timeLeft === 13) {
+        setCouponVal(genericData(mfactor - 3));
+      } else if (timeLeft === 14) {
+        setCouponVal(genericData(mfactor - 2));
+      } else if (timeLeft === 15) {
+        setCouponVal(genericData(mfactor - 1));
+      } else if (timeLeft === 16) {
+        setCouponVal(genericData(mfactor));
       }
-      // Test
-      else if (timeLeft === "session0") {
-        setCouponVal(jsonData.coupon0);
-      }
+      // // Test
+      // else if (timeLeft === "session0") {
+      //   setCouponVal(jsonData.coupon0);
+      // }
     }, 1000);
   });
   const handleSubmitCode = (e) => {
@@ -140,7 +231,7 @@ function App() {
   const [loader, setLoader] = useState(false);
   const [focus, setFocus] = useState(false);
 
-  console.log("loader", focus);
+  // console.log("loader", focus);
 
   // const [state, setState] = useState({ x: 25 });
 
