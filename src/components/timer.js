@@ -164,8 +164,8 @@ function App() {
       var year = new Date().getFullYear();
 
       if (year === 2020) {
-        // var cd = day - 14 + 1;
-        var cd = day - 10 + 1;
+        var cd = day - 14 + 1;
+        // var cd = day - 10 + 1;
         var mfactor = 16 * cd;
       } else if (year === 2021) {
         var mfactor = 16 * (day + 18);
@@ -205,9 +205,9 @@ function App() {
         setCouponVal(genericData[mfactor]);
       }
       // // Test
-      // else if (timeLeft === "session0") {
-      //   setCouponVal(jsonData.coupon0);
-      // }
+      else {
+        setCouponVal(jsonData.coupon0);
+      }
       setTimeLeft2(timeLeft);
     }, 1000);
   });
@@ -215,10 +215,10 @@ function App() {
     e.preventDefault();
     // setLoader(true);
 
-    // console.log(code);
-    // console.log("couponVal", couponVal);
+    console.log(code);
+    console.log("couponVal", couponVal);
 
-    if (couponVal === code) {
+    if (couponVal === code.toUpperCase()) {
       // console.log("Access Granted!");
       setShowFields(true);
     }
@@ -343,6 +343,8 @@ function App() {
                   <input
                     onFocus={(e) => setFocus(true)}
                     onBlur={(e) => setFocus(false)}
+                    placeholder=" e.g. John"
+
                     required
                     type="text"
                     value={firstName}
@@ -355,6 +357,7 @@ function App() {
                   <input
                     onFocus={(e) => setFocus(true)}
                     onBlur={(e) => setFocus(false)}
+                    placeholder=" e.g. Doe"
                     required
                     type="text"
                     value={lastName}
@@ -367,6 +370,7 @@ function App() {
                   <input
                     onFocus={(e) => setFocus(true)}
                     onBlur={(e) => setFocus(false)}
+                    placeholder=" e.g. john@example.com"
                     required
                     type="email"
                     value={email}
@@ -375,10 +379,11 @@ function App() {
                     name="Email"
                   />
 
-                  <p>Phone Number*</p>
+                  <p>Contact Number*</p>
                   <input
                     onFocus={(e) => setFocus(true)}
                     onBlur={(e) => setFocus(false)}
+                    placeholder=" e.g. +97150994575"
                     required
                     type="number"
                     min="10"
