@@ -20,6 +20,7 @@ function App() {
   // const [isTimeOver, setIsTimeOver] = useState(false);
   const [code, setCode] = useState("");
   const [showFields, setShowFields] = useState(false);
+  const [showCodeFields, setShowCodeFields] = useState(false);
   const [couponVal, setCouponVal] = useState("");
   const [timeLeft2, setTimeLeft2] = useState("");
   // const [flag, setFlag] = useState(false);
@@ -34,119 +35,161 @@ function App() {
 
     var timeLeft = 1;
     var timeLeft1 = "";
+    // Time the user gets to enter the right code
+    var inputTime = 20;
+    var startTime = 12
 
-    if (hours === 13 && minutes === 30) {
-      if (seconds < 11) {
+    if (hours === startTime && minutes === 0) {
+      if (seconds < inputTime) {
         timeLeft1 = 1;
       } else {
         timeLeft1 = "";
       }
-    }
-    if (hours === 14 && minutes === 0) {
-      if (seconds < 11) {
+    } else if (hours === startTime && minutes === 10) {
+      if (seconds < inputTime) {
         timeLeft1 = 2;
       } else {
         timeLeft1 = "";
       }
-    }
-    if (hours === 14 && minutes === 30) {
-      if (seconds < 11) {
+    } else if (hours === startTime && minutes === 20) {
+      if (seconds < inputTime) {
         timeLeft1 = 3;
       } else {
         timeLeft1 = "";
       }
-    }
-    if (hours === 15 && minutes === 0) {
-      if (seconds < 11) {
+    } else if (hours === startTime && minutes === 30) {
+      if (seconds < inputTime) {
         timeLeft1 = 4;
       } else {
         timeLeft1 = "";
       }
-    }
-    if (hours === 15 && minutes === 30) {
-      if (seconds < 11) {
+    } else if (hours === startTime && minutes === 40) {
+      if (seconds < inputTime) {
         timeLeft1 = 5;
       } else {
         timeLeft1 = "";
       }
-    }
-    if (hours === 16 && minutes === 0) {
-      if (seconds < 11) {
+    } else if (hours === startTime && minutes === 50) {
+      if (seconds < inputTime) {
         timeLeft1 = 6;
       } else {
         timeLeft1 = "";
       }
     }
-    if (hours === 16 && minutes === 30) {
-      if (seconds < 11) {
-        timeLeft1 = 7;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 17 && minutes === 0) {
-      if (seconds < 11) {
-        timeLeft1 = 8;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 17 && minutes === 30) {
-      if (seconds < 11) {
-        timeLeft1 = 9;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 18 && minutes === 0) {
-      if (seconds < 11) {
-        timeLeft1 = 10;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 18 && minutes === 30) {
-      if (seconds < 11) {
-        timeLeft1 = 11;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 19 && minutes === 0) {
-      if (seconds < 11) {
-        timeLeft1 = 12;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 19 && minutes === 30) {
-      if (seconds < 11) {
-        timeLeft1 = 13;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 20 && minutes === 0) {
-      if (seconds < 11) {
-        timeLeft1 = 14;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 20 && minutes === 30) {
-      if (seconds < 11) {
-        timeLeft1 = 15;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-    if (hours === 21 && minutes === 0) {
-      if (seconds < 11) {
-        timeLeft1 = 16;
-      } else {
-        timeLeft1 = "";
-      }
-    }
+
+    // if (hours === 13 && minutes === 30) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 1;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+
+    // if (hours === 14 && minutes === 0) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 2;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 14 && minutes === 30) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 3;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 15 && minutes === 0) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 4;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 15 && minutes === 30) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 5;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 16 && minutes === 0) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 6;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 16 && minutes === 30) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 7;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 17 && minutes === 0) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 8;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 17 && minutes === 30) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 9;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 18 && minutes === 0) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 10;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 18 && minutes === 30) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 11;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 19 && minutes === 0) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 12;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 19 && minutes === 30) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 13;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 20 && minutes === 0) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 14;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 20 && minutes === 30) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 15;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
+    // if (hours === 21 && minutes === 0) {
+    //   if (seconds < inputTime) {
+    //     timeLeft1 = 16;
+    //   } else {
+    //     timeLeft1 = "";
+    //   }
+    // }
     // if (hours === 17) {
     //   timeLeft1 = 1;
     // }
@@ -164,8 +207,8 @@ function App() {
       var year = new Date().getFullYear();
 
       if (year === 2020) {
-        var cd = day - 14 + 1;
-        // var cd = day - 10 + 1;
+        // var cd = day - 14 + 1;
+        var cd = 12 + 1 - day;
         var mfactor = 16 * cd;
       } else if (year === 2021) {
         var mfactor = 16 * (day + 18);
@@ -221,6 +264,8 @@ function App() {
     if (couponVal === code.toUpperCase()) {
       // console.log("Access Granted!");
       setShowFields(true);
+      setShowCodeFields(true)
+      setCode("");
     }
   };
 
@@ -242,11 +287,12 @@ function App() {
 
     e.preventDefault();
     setLoader(true);
+    setShowFields(false);
+    setShowCodeFields(true);
+    console.log(showFields);
 
     // var session = sessionCheck();
     var session = "session" + timeLeft.toString();
-    console.log(session);
-    console.log("timeLeft", timeLeft2);
     // var session = "session0";
 
     db.collection(session)
@@ -263,7 +309,7 @@ function App() {
         // setLoader(false);
         setTimeout(function () {
           window.location.reload();
-        }, 3000);
+        }, 5000);
       })
       .catch((error) => {
         alert(error.message);
@@ -302,7 +348,7 @@ function App() {
             <form className="form" onSubmit={handleSubmitCode}>
               <div
                 className="code-label"
-                style={{ display: showFields ? "none" : "block" }}
+                style={{ display: showCodeFields ? "none" : "block" }}
               >
                 <h2>Enter Secret Code:</h2>
 
@@ -324,16 +370,16 @@ function App() {
               </div>
 
               {/* <div className="success-text" style={{display: loader? "block" : "block"}}> */}
-              <div
-                className="success-text"
-                style={{ display: loader ? "block" : "none" }}
-              >
-                <p>You are successfully registered, please check your email.</p>
+              <div className="success-text" style={{ display: loader ? "block" : "none" }}>
+                <p>Thank you for Participating.</p>
+                <p>Please check your email.</p>
+                <span>Please make sure to check your Junk or Spam mail box.</span>
               </div>
 
               <div
                 className="details-label"
                 style={{ display: showFields ? "block" : "none" }}
+                // style={{ display: showFields ? "none" : "none" }}
               >
                 {/* <div style={{ visibility: showFields ? "hidden" : "visible" }}> */}
                 <form className="form" onSubmit={handleSubmit}>
@@ -344,7 +390,6 @@ function App() {
                     onFocus={(e) => setFocus(true)}
                     onBlur={(e) => setFocus(false)}
                     placeholder=" e.g. John"
-
                     required
                     type="text"
                     value={firstName}
@@ -383,22 +428,27 @@ function App() {
                   <input
                     onFocus={(e) => setFocus(true)}
                     onBlur={(e) => setFocus(false)}
-                    placeholder=" e.g. +97150994575"
+                    placeholder=" e.g. 050994575"
                     required
                     type="number"
-                    min="10"
+                    minLength="10"
+                    min="26"
+                    // onkeypress={() => }
                     value={number}
                     id="Number"
                     onChange={(e) => setNumber(e.target.value)}
                     name="Number"
                   />
                   <div className="checkbox">
-                    <label for="vehicle1"> I have a bike</label>
+                    <label for="vehicle1">
+                      {" "}
+                      I agree to the <a href="https://www.dubaifestivalplaza.com/home/terms">terms and conditions</a>
+                    </label>
                     <input
                       required
                       type="checkbox"
                       id="vehicle1"
-                      name="vehicle1"
+                      name="vehicle1" 
                       value="Bike"
                     />
                     <br></br>
@@ -412,9 +462,9 @@ function App() {
             </form>
           </div>
         </div>
-        <div className="footer" style={{ display: focus ? "none" : "block" }}>
+        {/* <div className="footer" style={{ display: focus ? "none" : "block" }}>
           <img src={logo} alt="Festival Plaza" />
-        </div>
+        </div> */}
       </div>
     </>
   );
