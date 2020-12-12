@@ -36,8 +36,8 @@ function App() {
     var timeLeft = 1;
     var timeLeft1 = "";
     // Time the user gets to enter the right code
-    var inputTime = 20;
-    var startTime = 12
+    var inputTime = 55;
+    var startTime = 13;
 
     if (hours === startTime && minutes === 0) {
       if (seconds < inputTime) {
@@ -289,11 +289,12 @@ function App() {
     setLoader(true);
     setShowFields(false);
     setShowCodeFields(true);
-    console.log(showFields);
+    // console.log(showFields);
 
     // var session = sessionCheck();
     var session = "session" + timeLeft.toString();
     // var session = "session0";
+    console.log("session", session);
 
     db.collection(session)
       .add({
