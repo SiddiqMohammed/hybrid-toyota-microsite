@@ -30,48 +30,48 @@ function App() {
     var minutes = new Date().getMinutes();
     var seconds = new Date().getSeconds();
 
-    // console.log(year);
+    // console.log(hours);
     // console.log(genericData[0]);
 
     var timeLeft = 1;
     var timeLeft1 = "";
+    var inputTime = 20;
     // Time the user gets to enter the right code
-    var inputTime = 55;
-    var startTime = 13;
+    var startTime = 11;
 
-    if (hours === startTime && minutes === 0) {
+    if (hours > startTime && minutes === 0) {
       if (seconds < inputTime) {
-        timeLeft1 = 1;
+        timeLeft1 = 7;
       } else {
         timeLeft1 = "";
       }
-    } else if (hours === startTime && minutes === 10) {
+    } else if (hours > startTime && minutes === 10) {
       if (seconds < inputTime) {
-        timeLeft1 = 2;
+        timeLeft1 = 8;
       } else {
         timeLeft1 = "";
       }
-    } else if (hours === startTime && minutes === 20) {
+    } else if (hours > startTime && minutes === 20) {
       if (seconds < inputTime) {
-        timeLeft1 = 3;
+        timeLeft1 = 9;
       } else {
         timeLeft1 = "";
       }
-    } else if (hours === startTime && minutes === 30) {
+    } else if (hours > startTime && minutes === 30) {
       if (seconds < inputTime) {
-        timeLeft1 = 4;
+        timeLeft1 = 10;
       } else {
         timeLeft1 = "";
       }
-    } else if (hours === startTime && minutes === 40) {
+    } else if (hours > startTime && minutes === 40) {
       if (seconds < inputTime) {
-        timeLeft1 = 5;
+        timeLeft1 = 11;
       } else {
         timeLeft1 = "";
       }
-    } else if (hours === startTime && minutes === 50) {
+    } else if (hours > startTime && minutes === 50) {
       if (seconds < inputTime) {
-        timeLeft1 = 6;
+        timeLeft1 = 12;
       } else {
         timeLeft1 = "";
       }
@@ -198,17 +198,26 @@ function App() {
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [entryTime, setEntryTime] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
 
+      console.log(timeLeft)
+
+      if(timeLeft !== ""){
+        setEntryTime(timeLeft);
+      }
+
       var day = new Date().getDate();
       var year = new Date().getFullYear();
 
+      var eventStartDate = 13;
+
       if (year === 2020) {
         // var cd = day - 14 + 1;
-        var cd = 12 + 1 - day;
+        var cd = day - eventStartDate + 1;
         var mfactor = 16 * cd;
       } else if (year === 2021) {
         var mfactor = 16 * (day + 18);
@@ -258,13 +267,13 @@ function App() {
     e.preventDefault();
     // setLoader(true);
 
-    console.log(code);
+    // console.log(code);
     console.log("couponVal", couponVal);
 
     if (couponVal === code.toUpperCase()) {
       // console.log("Access Granted!");
       setShowFields(true);
-      setShowCodeFields(true)
+      setShowCodeFields(true);
       setCode("");
     }
   };
@@ -289,12 +298,13 @@ function App() {
     setLoader(true);
     setShowFields(false);
     setShowCodeFields(true);
-    // console.log(showFields);
+
+    console.log("entryTime", entryTime);
 
     // var session = sessionCheck();
-    var session = "session" + timeLeft.toString();
+    var session = "session" + entryTime.toString();
     // var session = "session0";
-    console.log("session", session);
+    // console.log("session", session);
 
     db.collection(session)
       .add({
