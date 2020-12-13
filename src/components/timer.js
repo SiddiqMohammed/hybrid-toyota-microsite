@@ -39,157 +39,157 @@ function App() {
     // Time the user gets to enter the right code
     var startTime = 11;
 
-    if (hours > startTime && minutes === 0) {
-      if (seconds < inputTime) {
-        timeLeft1 = 7;
-      } else {
-        timeLeft1 = "";
-      }
-    } else if (hours > startTime && minutes === 10) {
-      if (seconds < inputTime) {
-        timeLeft1 = 8;
-      } else {
-        timeLeft1 = "";
-      }
-    } else if (hours > startTime && minutes === 20) {
-      if (seconds < inputTime) {
-        timeLeft1 = 9;
-      } else {
-        timeLeft1 = "";
-      }
-    } else if (hours > startTime && minutes === 30) {
-      if (seconds < inputTime) {
-        timeLeft1 = 10;
-      } else {
-        timeLeft1 = "";
-      }
-    } else if (hours > startTime && minutes === 40) {
-      if (seconds < inputTime) {
-        timeLeft1 = 11;
-      } else {
-        timeLeft1 = "";
-      }
-    } else if (hours > startTime && minutes === 50) {
-      if (seconds < inputTime) {
-        timeLeft1 = 12;
-      } else {
-        timeLeft1 = "";
-      }
-    }
-
-    // if (hours === 13 && minutes === 30) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 1;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-
-    // if (hours === 14 && minutes === 0) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 2;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-    // if (hours === 14 && minutes === 30) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 3;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-    // if (hours === 15 && minutes === 0) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 4;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-    // if (hours === 15 && minutes === 30) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 5;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-    // if (hours === 16 && minutes === 0) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 6;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-    // if (hours === 16 && minutes === 30) {
+    // if (hours > startTime && minutes === 0) {
     //   if (seconds < inputTime) {
     //     timeLeft1 = 7;
     //   } else {
     //     timeLeft1 = "";
     //   }
-    // }
-    // if (hours === 17 && minutes === 0) {
+    // } else if (hours > startTime && minutes === 10) {
     //   if (seconds < inputTime) {
     //     timeLeft1 = 8;
     //   } else {
     //     timeLeft1 = "";
     //   }
-    // }
-    // if (hours === 17 && minutes === 30) {
+    // } else if (hours > startTime && minutes === 20) {
     //   if (seconds < inputTime) {
     //     timeLeft1 = 9;
     //   } else {
     //     timeLeft1 = "";
     //   }
-    // }
-    // if (hours === 18 && minutes === 0) {
+    // } else if (hours > startTime && minutes === 30) {
     //   if (seconds < inputTime) {
     //     timeLeft1 = 10;
     //   } else {
     //     timeLeft1 = "";
     //   }
-    // }
-    // if (hours === 18 && minutes === 30) {
+    // } else if (hours > startTime && minutes === 40) {
     //   if (seconds < inputTime) {
     //     timeLeft1 = 11;
     //   } else {
     //     timeLeft1 = "";
     //   }
-    // }
-    // if (hours === 19 && minutes === 0) {
+    // } else if (hours > startTime && minutes === 50) {
     //   if (seconds < inputTime) {
     //     timeLeft1 = 12;
     //   } else {
     //     timeLeft1 = "";
     //   }
     // }
-    // if (hours === 19 && minutes === 30) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 13;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-    // if (hours === 20 && minutes === 0) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 14;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-    // if (hours === 20 && minutes === 30) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 15;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
-    // if (hours === 21 && minutes === 0) {
-    //   if (seconds < inputTime) {
-    //     timeLeft1 = 16;
-    //   } else {
-    //     timeLeft1 = "";
-    //   }
-    // }
+
+    if (hours === 13 && minutes === 30) {
+      if (seconds < inputTime) {
+        timeLeft1 = 1;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+
+    if (hours === 14 && minutes === 0) {
+      if (seconds < inputTime) {
+        timeLeft1 = 2;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 14 && minutes === 30) {
+      if (seconds < inputTime) {
+        timeLeft1 = 3;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 15 && minutes === 0) {
+      if (seconds < inputTime) {
+        timeLeft1 = 4;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 15 && minutes === 30) {
+      if (seconds < inputTime) {
+        timeLeft1 = 5;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 16 && minutes === 0) {
+      if (seconds < inputTime) {
+        timeLeft1 = 6;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 16 && minutes === 30) {
+      if (seconds < inputTime) {
+        timeLeft1 = 7;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 17 && minutes === 0) {
+      if (seconds < inputTime) {
+        timeLeft1 = 8;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 17 && minutes === 30) {
+      if (seconds < inputTime) {
+        timeLeft1 = 9;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 18 && minutes === 0) {
+      if (seconds < inputTime) {
+        timeLeft1 = 10;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 18 && minutes === 30) {
+      if (seconds < inputTime) {
+        timeLeft1 = 11;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 19 && minutes === 0) {
+      if (seconds < inputTime) {
+        timeLeft1 = 12;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 19 && minutes === 30) {
+      if (seconds < inputTime) {
+        timeLeft1 = 13;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 20 && minutes === 0) {
+      if (seconds < inputTime) {
+        timeLeft1 = 14;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 20 && minutes === 30) {
+      if (seconds < inputTime) {
+        timeLeft1 = 15;
+      } else {
+        timeLeft1 = "";
+      }
+    }
+    if (hours === 21 && minutes === 0) {
+      if (seconds < inputTime) {
+        timeLeft1 = 16;
+      } else {
+        timeLeft1 = "";
+      }
+    }
     // if (hours === 17) {
     //   timeLeft1 = 1;
     // }
@@ -268,7 +268,7 @@ function App() {
     // setLoader(true);
 
     // console.log(code);
-    console.log("couponVal", couponVal);
+    // console.log("couponVal", couponVal);
 
     if (couponVal === code.toUpperCase()) {
       // console.log("Access Granted!");
