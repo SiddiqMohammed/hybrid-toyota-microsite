@@ -204,7 +204,7 @@ function App() {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
 
-      console.log(timeLeft)
+      // console.log(timeLeft)
 
       if(timeLeft !== ""){
         setEntryTime(timeLeft);
@@ -213,7 +213,7 @@ function App() {
       var day = new Date().getDate();
       var year = new Date().getFullYear();
 
-      var eventStartDate = 13;
+      var eventStartDate = 14;
 
       if (year === 2020) {
         // var cd = day - 14 + 1;
@@ -299,7 +299,7 @@ function App() {
     setShowFields(false);
     setShowCodeFields(true);
 
-    console.log("entryTime", entryTime);
+    // console.log("entryTime", entryTime);
 
     // var session = sessionCheck();
     var session = "session" + entryTime.toString();
