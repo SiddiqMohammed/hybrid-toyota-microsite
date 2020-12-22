@@ -206,10 +206,6 @@ function App() {
 
       // console.log(timeLeft)
 
-      if(timeLeft !== ""){
-        setEntryTime(timeLeft);
-      }
-
       var day = new Date().getDate();
       var year = new Date().getFullYear();
 
@@ -259,6 +255,10 @@ function App() {
       // // Test
       else {
         setCouponVal(jsonData.coupon0);
+      }
+      if(timeLeft !== ""){
+        var calculations = mfactor - 16 + timeLeft;
+        setEntryTime(calculations);
       }
       setTimeLeft2(timeLeft);
     }, 1000);
