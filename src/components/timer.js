@@ -441,9 +441,10 @@ function App() {
                     onBlur={(e) => setFocus(false)}
                     placeholder=" e.g. 050994575"
                     required
-                    type="number"
-                    minLength="10"
-                    min="26"
+                    type="tel"
+                    pattern="[0-9]{10}"
+                    // minLength="10"
+                    // min="26"
                     // onkeypress={() => }
                     value={number}
                     id="Number"
