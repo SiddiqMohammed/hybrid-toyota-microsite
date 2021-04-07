@@ -43,8 +43,8 @@ function App() {
       <div className="outer-div">
         <div className="input-fields text-center">
           <div className="yeer">
-            <h1>TOYOTA HYBRID</h1>
-            <h1>HEROES</h1>
+            {/* <h1>TOYOTA HYBRID</h1>
+            <h1>HEROES</h1> */}
 
             <div className="central">
               <div className="details-label">
