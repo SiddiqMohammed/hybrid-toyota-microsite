@@ -14,10 +14,10 @@ function App() {
 
     e.preventDefault();
 
-    db.collection("session")
+    db.collection("dfc")
       .add({
-        FirstName: firstName,
-        LastName: lastName,
+        "First Name": firstName,
+        "Last Name": lastName,
         Email: email,
         Number: number,
         dateTime: String(d),
@@ -25,7 +25,7 @@ function App() {
       .then(() => {
         setTimeout(function () {
           window.location.reload();
-        }, 5000);
+        }, 1000);
       })
       .catch((error) => {
         alert(error.message);
