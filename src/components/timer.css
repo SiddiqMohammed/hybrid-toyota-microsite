@@ -17,7 +17,7 @@
 }
 
 .bg {
-  background-image: url("../img/Desktop.png");
+  background-image: url("../img/bgt.png");
   height: 100%;
   background-position: center;
   background-repeat: repeat-y;
@@ -25,12 +25,7 @@
 }
 
 .main-text {
-  /* color: rgb(62, 61, 67); */
   color: black;
-}
-
-.input-fields {
-  /* margin-top: 10%; */
 }
 
 .top-text {
@@ -58,59 +53,7 @@
   /* font-size: 46px; */
 }
 
-.code-label {
-  position: absolute;
-  top: 42%;
-}
-
-.code-label h2 {
-  color: white;
-  font-family: "FjallaOne", sans-serif;
-  text-transform: capitalize;
-  margin: 0 0 5px 0;
-  font-size: 20px;
-  font-weight: 10;
-  /* margin-top: 136px; */
-}
-
-.code-label > input {
-  font-family: "Montserrat", sans-serif;
-  padding: 25px 0 25px 0;
-  border-radius: 3px;
-  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
-  margin-bottom: 5px;
-  border: 3px solid #ffb900;
-  /* border: none; */
-  /* background: #fff; */
-  font-size: 22px;
-  /* color: rgb(0, 0, 32); */
-  outline: none;
-  border-radius: 5px;
-  height: 1.2rem;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.submit-button button {
-  margin-top: 10px;
-  font-family: "FjallaOne", sans-serif;
-  color: black;
-  /* padding: 20px; */
-  border: none;
-  background-color: white;
-  /* font-weight: 600; */
-  /* font-size: 37px; */
-  border-radius: 2px;
-  color: black;
-  cursor: pointer;
-  /* transition: 0.2s ease-in-out; */
-  /* margin-top: 45px; */
-  width: 40%;
-  /* margin-left: 23px; */
-  height: 35px;
-}
-
-.success-text  {
+.success-text {
   margin: 0;
   position: absolute;
   top: 54%;
@@ -141,6 +84,18 @@
   /* margin: 0; */
   /* font-size: 20px; */
   /* margin-top: 136px; */
+}
+
+.central {
+  /* background-image: url('./bg.png');
+  background-size: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 43rem;
+  margin-left: 6.5rem; */
+  align-items: center;
+  color: white;
 }
 
 .form {
@@ -186,21 +141,14 @@
   font-size: 20px;
 }
 
-.form h1 span {
-  /* color:  rgb(147, 213, 0); */
-}
-
 .form > input {
   font-family: "Montserrat", sans-serif;
   padding: 15px;
-  border-radius: 3px;
-  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
+
   margin-bottom: 5px;
   border: 3px solid #ffb900;
-  /* border: none; */
-  /* background: #fff; */
+
   font-size: 22px;
-  /* color: rgb(0, 0, 32); */
   outline: none;
   border-radius: 5px;
   height: 1.2rem;
@@ -210,21 +158,13 @@
 .form > select {
   font-family: "Montserrat", sans-serif;
   padding: 2px;
-  border-radius: 3px;
-  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
+
   margin-bottom: 20px;
-  /* border: 1px solid lightgray; */
-  /* border: none; */
-  /* background: #fff; */
   font-size: 16px;
   color: white;
   outline: none;
   border-radius: 5px;
   height: 2rem;
-}
-
-.form > input:focus {
-  /* border: 1px solid rgb(0, 0, 196); */
 }
 
 .form > textarea {
@@ -234,9 +174,7 @@
 }
 
 .form > label {
-  /* font-family: "Montserrat", sans-serif; */
   padding-bottom: 4px;
-  /* color: whitblae; */
   font-weight: inherit;
   font-size: 17px;
 }
@@ -244,64 +182,25 @@
 .form > button {
   font-family: "FjallaOne", sans-serif;
   color: black;
-  /* padding: 20px; */
   border: none;
   background-color: white;
-  /* font-weight: 600; */
-  /* font-size: 37px; */
-  border-radius: 2px;
+  border-radius: 20px;
   color: black;
   cursor: pointer;
-  /* transition: 0.2s ease-in-out; */
-  /* margin-top: 45px; */
   width: 40%;
-  /* margin-left: 23px; */
   height: 35px;
   margin-top: 20px;
-}
-
-/* .form > button {
-  font-family: 'Montserrat', sans-serif;
-  color: rgb(63, 55, 71);
-  padding: 20px;
-  border: none;
-  background-color: rgb(37, 45, 63);
-  font-weight: 600;
-  font-size: 37px;
-  border-radius: 11px;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-  margin-top: 45px;
-  width: 94%;
-  margin-left: 23px;
-  height: 80px;
-} */
-
-.form > button:hover {
-  /* background-color: rgb(0, 0, 196); */
 }
 
 .checkbox label {
   float: right;
   padding-left: 10px;
   font-family: "FjallaOne", sans-serif;
+  font-size: 12px;
 }
 
 .checkbox input {
   margin-top: 3px;
-}
-
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  /* background-color: red; */
-  color: white;
-  text-align: center;
-  transform: scale(0.5);
-  left: -30px;
 }
 
 input::-webkit-outer-spin-button,
@@ -317,19 +216,18 @@ input[type="number"] {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .bg {
-    background-image: url("../img/bgwc.png");
+    background-image: url("../img/bgt.png");
     height: 100%;
     background-position: center;
     background-repeat: repeat-y;
     background-size: cover;
   }
-  @media only screen and (min-device-height: 480px) and (max-device-height: 750px)  {
+  @media only screen and (min-device-height: 480px) and (max-device-height: 750px) {
     .footer {
       position: absolute;
       left: 0;
       bottom: -30;
       width: 100%;
-      /* background-color: red; */
       color: white;
       text-align: center;
       transform: scale(0.5);
@@ -340,11 +238,21 @@ input[type="number"] {
       top: 30%;
     }
   }
-  @media only screen and (max-device-height: 568px)  {
+  @media only screen and (max-device-height: 568px) {
     .details-label {
       position: absolute;
       top: 22%;
       transform: scale(0.8);
+    }
+  }
+  @media only screen and (device-width: 768px) {
+    /* For general iPad layouts */
+    .bg {
+      background-image: url("../img/bgt.png");
+      height: 100%;
+      background-position: center;
+      background-repeat: repeat-y;
+      background-size: cover;
     }
   }
 }
