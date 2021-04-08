@@ -4,15 +4,13 @@ import "firebase/storage";
 import "firebase/auth";
 
 var firebaseApp = firebase.initializeApp({
-
-    apiKey: "AIzaSyAHBqD9JOK2xSVdqWeozKmvqtzHOa4DWN8",
-    authDomain: "gifting-you.firebaseapp.com",
-    projectId: "gifting-you",
-    storageBucket: "gifting-you.appspot.com",
-    messagingSenderId: "708131784164",
-    appId: "1:708131784164:web:0f49e15dad14c50fe433f1",
-    measurementId: "G-ZZNX23MF80"
-
+  apiKey: "AIzaSyDc1INk48UYiC1k-dnaojsRlPn1zGjn_UM",
+  authDomain: "toyota-hybrid-heroes.firebaseapp.com",
+  projectId: "toyota-hybrid-heroes",
+  storageBucket: "toyota-hybrid-heroes.appspot.com",
+  messagingSenderId: "259115542615",
+  appId: "1:259115542615:web:9b45d823693f9385321b12",
+  measurementId: "G-RGG7XY3XQ9",
 });
 
 var db = firebaseApp.firestore();
