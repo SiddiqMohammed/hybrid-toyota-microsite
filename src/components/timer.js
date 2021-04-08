@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <div className="outer-div">
-        <div className="input-fields text-center">
+        <div className="input-fields">
           <div className="yeer">
             {/* <h1>TOYOTA HYBRID</h1>
             <h1>HEROES</h1> */}
@@ -93,14 +93,7 @@ function App() {
                     onChange={(e) => setNumber(e.target.value)}
                     name="Number"
                   />
-                  <div className="checkbox">
-                    <label for="vehicle1">
-                      {" "}
-                      I agree to the{" "}
-                      <a href="https://www.dubaifestivalplaza.com/home/terms">
-                        terms and conditions
-                      </a>
-                    </label>
+                  <div className="checkbox text-center">
                     <input
                       required
                       type="checkbox"
@@ -108,12 +101,21 @@ function App() {
                       name="vehicle1"
                       value="Bike"
                     />
+                    <label htmlFor="vehicle1">
+                      {" "}
+                      I agree to the{" "}
+                      <a href="https://www.dubaifestivalplaza.com/home/terms">
+                        terms and conditions
+                      </a>
+                    </label>
                     <br></br>
                   </div>
+<div className="text-center">
 
-                  <button style={{ marginTop: "0" }} type="submit">
+                  <button type="submit">
                     Submit
                   </button>
+</div>
                 </form>
               </div>
             </div>

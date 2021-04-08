@@ -17,7 +17,7 @@
 }
 
 .bg {
-  background-image: url("../img/bgt.png");
+  background-image: url("../img/ipbg.png");
   height: 100%;
   background-position: center;
   background-repeat: repeat-y;
@@ -75,40 +75,29 @@
 .details-label {
   position: absolute;
   top: 33%;
+  width: 75%;
 }
 
 .details-label p {
   color: white;
   font-family: "FjallaOne", sans-serif;
-  /* text-transform: capitalize; */
-  /* margin: 0; */
-  /* font-size: 20px; */
-  /* margin-top: 136px; */
 }
 
 .central {
-  /* background-image: url('./bg.png');
-  background-size: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* width: 43rem;
-  margin-left: 6.5rem; */
   align-items: center;
   color: white;
 }
 
-.form {
-  /* background-image: url('./bg.png');
-  background-size: 100%; */
+/* .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* width: 43rem;
-  margin-left: 6.5rem; */
   align-items: center;
   color: white;
-}
+} */
 
 .form img {
   width: 65%;
@@ -121,7 +110,6 @@
   text-align: center;
   font-size: 2rem;
   font-weight: 100;
-  /* margin-top: 53px; */
 }
 
 .form > h2 {
@@ -137,22 +125,22 @@
 .form > p {
   margin: 0;
   letter-spacing: 1px;
-  text-indent: 10px;
+  /* text-indent: 10px; */
   font-size: 20px;
 }
 
 .form > input {
   font-family: "Montserrat", sans-serif;
-  padding: 15px;
+  padding: 15px 0 15px 2px;
 
   margin-bottom: 5px;
-  border: 3px solid #ffb900;
-
+  border: 1px solid white;
+width: 100%;
   font-size: 22px;
   outline: none;
-  border-radius: 5px;
   height: 1.2rem;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
 }
 
 .form > select {
@@ -179,7 +167,7 @@
   font-size: 17px;
 }
 
-.form > button {
+.form button {
   font-family: "FjallaOne", sans-serif;
   color: black;
   border: none;
@@ -187,20 +175,25 @@
   border-radius: 20px;
   color: black;
   cursor: pointer;
-  width: 40%;
+  width: 20%;
   height: 35px;
   margin-top: 20px;
 }
 
 .checkbox label {
-  float: right;
-  padding-left: 10px;
-  font-family: "FjallaOne", sans-serif;
-  font-size: 12px;
+  /* float: right;
+  padding-left: 10px; */
+  /* font-family: "FjallaOne", sans-serif; */
+  /* font-size: 12px; */
+  margin-top: 10px;
+}
+.checkbox label a{
+  text-decoration: underline;
 }
 
 .checkbox input {
-  margin-top: 3px;
+  margin-right: 3px;
+  padding-top: 10px;
 }
 
 input::-webkit-outer-spin-button,
