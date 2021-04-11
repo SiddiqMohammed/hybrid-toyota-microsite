@@ -1,23 +1,22 @@
 @font-face {
-  font-family: "AgipoLight";
-  src: local("AgipoLight"),
-    url(../fonts/AgipoLight-Regular.otf) format("truetype");
+  font-family: "ToyotaType-Bold";
+  src: local("ToyotaType-Bold"),
+    url(../fonts/ToyotaType-Bold.otf) format("truetype");
 }
 
 @font-face {
-  font-family: "AgipoLightItalic";
-  src: local("AgipoLight-Italic"),
-    url(../fonts/AgipoLight-Italic.otf) format("truetype");
+  font-family: "ToyotaType-Book";
+  src: local("ToyotaType-Book"),
+    url(../fonts/ToyotaType-Book.otf) format("truetype");
 }
-
 @font-face {
-  font-family: "FjallaOne";
-  src: local("FjallaOne"),
-    url(../fonts/FjallaOne-Regular.ttf) format("truetype");
+  font-family: "ToyotaType-SemiBold";
+  src: local("ToyotaType-SemiBold"),
+    url(../fonts/ToyotaType-Semibold.otf) format("truetype");
 }
 
 .bg {
-  background-image: url("../img/ipbg.png");
+  background-image: url("../img/bg.png");
   height: 100%;
   background-position: center;
   background-repeat: repeat-y;
@@ -44,43 +43,28 @@
   padding-top: 25px;
 }
 
-.yeer h1 {
-  font-family: "FjallaOne", sans-serif;
-}
+.signUp button {
+  font-family: "ToyotaType-SemiBold", sans-serif;
+  color: black;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
 
-.yeer h1 span {
-  font-family: "AgipoLight", sans-serif;
-  /* font-size: 46px; */
-}
-
-.success-text {
-  margin: 0;
-  position: absolute;
-  top: 54%;
-  transform: translateY(-50%);
-}
-
-.success-text p {
-  font-family: "FjallaOne", sans-serif;
-  margin: 0;
-  font-size: 25px;
-}
-
-.success-text span {
-  font-family: "AgipoLightItalic", sans-serif;
-  /* margin: 0; */
-  font-size: 10px;
+  cursor: pointer;
+  width: 15%;
+  height: 35px;
+  margin-top: 50%;
 }
 
 .details-label {
   position: absolute;
-  top: 33%;
+  top: 27%;
   width: 75%;
 }
 
 .details-label p {
   color: white;
-  font-family: "FjallaOne", sans-serif;
+  font-family: "ToyotaType-Book", sans-serif;
 }
 
 .central {
@@ -131,14 +115,14 @@
 
 .form > input {
   font-family: "Montserrat", sans-serif;
-  padding: 15px 0 15px 2px;
+  /* padding: 15px 0 15px 2px; */
 
   margin-bottom: 5px;
   border: 1px solid white;
-width: 100%;
+  width: 100%;
   font-size: 22px;
   outline: none;
-  height: 1.2rem;
+  /* height: 1.2rem; */
   background-color: rgba(255, 255, 255, 0);
   color: white;
 }
@@ -168,12 +152,12 @@ width: 100%;
 }
 
 .form button {
-  font-family: "FjallaOne", sans-serif;
+  font-family: "ToyotaType-SemiBold", sans-serif;
   color: black;
   border: none;
   background-color: white;
   border-radius: 20px;
-  color: black;
+
   cursor: pointer;
   width: 20%;
   height: 35px;
@@ -183,11 +167,12 @@ width: 100%;
 .checkbox label {
   /* float: right;
   padding-left: 10px; */
-  /* font-family: "FjallaOne", sans-serif; */
+  font-family: "ToyotaType-Book", sans-serif;
   /* font-size: 12px; */
   margin-top: 10px;
 }
-.checkbox label a{
+.checkbox label a {
+  font-family: "ToyotaType-Bold", sans-serif;
   text-decoration: underline;
 }
 
@@ -196,10 +181,35 @@ width: 100%;
   padding-top: 10px;
 }
 
+.containers {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+.containers h2 {
+  font-family: "ToyotaType-Bold", sans-serif;
+}
+.containers p {
+  font-family: "ToyotaType-Book", sans-serif;
+}
+
+.thankYou {
+  text-align: center;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   margin: 0;
+}
+
+input, textarea {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 /* Firefox */
@@ -215,37 +225,50 @@ input[type="number"] {
     background-repeat: repeat-y;
     background-size: cover;
   }
-  @media only screen and (min-device-height: 480px) and (max-device-height: 750px) {
-    .footer {
-      position: absolute;
-      left: 0;
-      bottom: -30;
-      width: 100%;
-      color: white;
-      text-align: center;
-      transform: scale(0.5);
-      left: -30px;
-    }
-    .details-label {
-      position: absolute;
-      top: 30%;
-    }
+  .signUp button {
+    width: 25%;
+    margin-top: 75%;
   }
-  @media only screen and (max-device-height: 568px) {
-    .details-label {
-      position: absolute;
-      top: 22%;
-      transform: scale(0.8);
-    }
+  .details-label {
+    top: 25%;
   }
-  @media only screen and (device-width: 768px) {
-    /* For general iPad layouts */
-    .bg {
-      background-image: url("../img/bgt.png");
-      height: 100%;
-      background-position: center;
-      background-repeat: repeat-y;
-      background-size: cover;
-    }
+  .checkbox {
+    font-size: 15px;
+  }
+  .checkbox label {
+    margin-top: 2px;
+  }
+  .form button {
+    width: 30%;
+    margin-top: 0;
+  }
+  .details-label {
+    top: 25%;
+  }
+}
+@media only screen and (min-device-height: 480px) and (max-device-height: 750px) {
+}
+@media only screen and (max-device-height: 568px) {
+}
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+  .bg {
+    background-image: url("../img/bgt.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .signUp button {
+    margin-top: 25%;
+    width: 10%;
+  }
+  .details-label {
+    width: 27%;
+  }
+  .form button {
+    width: 25%;
   }
 }
