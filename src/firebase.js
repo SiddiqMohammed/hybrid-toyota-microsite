@@ -3,14 +3,15 @@ import "firebase/firestore";
 import "firebase/storage";
 import "firebase/auth";
 
-var firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyDc1INk48UYiC1k-dnaojsRlPn1zGjn_UM",
-  authDomain: "toyota-hybrid-heroes.firebaseapp.com",
-  projectId: "toyota-hybrid-heroes",
-  storageBucket: "toyota-hybrid-heroes.appspot.com",
-  messagingSenderId: "259115542615",
-  appId: "1:259115542615:web:9b45d823693f9385321b12",
-  measurementId: "G-RGG7XY3XQ9",
+
+const firebaseApp = firebase.initializeApp({
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 });
 
 var db = firebaseApp.firestore();
